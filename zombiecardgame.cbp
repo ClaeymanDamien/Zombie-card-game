@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="balek" />
+		<Option title="zombiecardgame" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -32,8 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Card.cpp" />
+		<Unit filename="Card.h" />
 		<Unit filename="Entity.cpp" />
 		<Unit filename="Entity.h" />
+		<Unit filename="gameloop.cpp" />
+		<Unit filename="gameloop.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

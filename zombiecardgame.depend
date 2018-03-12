@@ -1,6 +1,13 @@
 # depslib dependency file v1.0
-1446667744 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
-	<iostream>
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\entity.cpp
+	<string>
 
-1520871111 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
+
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
+	<iostream>
+	<string>
+	"gameloop.h"
+
+1520871897 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
 
