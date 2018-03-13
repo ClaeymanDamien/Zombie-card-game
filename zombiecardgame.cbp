@@ -32,14 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< HEAD
 		<Unit filename="Card.cpp" />
 		<Unit filename="Card.h" />
 		<Unit filename="Entite.cpp" />
 		<Unit filename="Entite.h" />
+=======
+>>>>>>> 5cf0e440d8d2b215db8a298bba023d4077cb3637
 		<Unit filename="Entity.cpp" />
 		<Unit filename="Entity.h" />
-		<Unit filename="gameloop.cpp" />
-		<Unit filename="gameloop.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
