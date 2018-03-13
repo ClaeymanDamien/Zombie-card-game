@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Card.cpp" />
 		<Unit filename="Card.h" />
+		<Unit filename="Entite.cpp" />
+		<Unit filename="Entite.h" />
 		<Unit filename="Entity.cpp" />
 		<Unit filename="Entity.h" />
 		<Unit filename="gameloop.cpp" />
