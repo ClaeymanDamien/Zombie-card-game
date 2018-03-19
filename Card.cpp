@@ -19,7 +19,7 @@ void Card::add_life(int value,Entite &target){
 }
 
 void Card::pull_life(int value, Entite attacker, Entite &defender){
-    defender.m_pointsDeVie -= value+attacker.m_force-defender.m_resistance;
+    defender.m_pointsDeVie -= value+attacker.m_strength-defender.m_resistance;
 }
 
 void Card::add_resistance(int value, Entite &target){
@@ -30,6 +30,10 @@ void Card::damage_zone(int value, Entite attacker, std::vector<Entite> &defender
     for(unsigned int i=0; i<defenders.size(); i++){
         pull_life(value,attacker,defenders[i]);
     }
+}
+void Card::add_strength(int value, Entite &target){
+    target.m_strength += value;
+    
 }
 
 
