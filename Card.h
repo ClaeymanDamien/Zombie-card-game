@@ -42,8 +42,8 @@ class Bouclier : Card{
 private:
     int resistance;
 public:
-    void effect();
-
+    void effect(Entite &target);
+    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _defense = 1 );
 };
 
 class Medkit : Card{
