@@ -23,18 +23,10 @@ Card(std::string _id = "Inconnue", std::string _description = "Pas de descriptio
 ~Card();
 void target_entity(Entite &cible);
 void play_card(bool _played);
-//void add_defense();
 void add_life(int value, Entite &target);
 void pull_life(int value, Entite attacker, Entite &defender);
 void add_resistance(int value, Entite &target);
-<<<<<<< HEAD
 void damage_zone(int value, Entite attacker, std::vector<Entite> &defenders);
-=======
-
-void add_strength();
-void damage_zone(int value, Entite attacker, std::vector<Entite> &defenders);
-
->>>>>>> 60e742fd536f6e5e7f07bd73e538024b90e034f5
 void add_strength(int value, Entite &target);
 
 
