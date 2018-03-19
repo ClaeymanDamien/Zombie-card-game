@@ -24,8 +24,14 @@ void Card::pull_life(int value, Entite attacker, Entite &defender){
 
 void Card::add_resistance(int value, Entite &target){
     target.m_resistance += value;
-
 }
+
+void Card::damage_zone(int value, Entite attacker, std::vector<Entite> &defenders){
+    for(unsigned int i=0; i<defenders.size(); i++){
+        pull_life(value,attacker,defenders[i]);
+    }
+}
+
 
 void Card::play_card(bool _played){
     if(_played){
@@ -46,9 +52,11 @@ Lancepierre::Lancepierre(std::string _id, std::string _description, int _cost, i
     cost = _cost;
     dommage = _dommage;
 }
+
 void Bouclier::effect(Entite &target){
     add_resistance(resistance,target);
 }
+
 Bouclier::Bouclier (std::string _id, std::string _description, int _cost, int _resistance){
 
     id = _id;
@@ -70,8 +78,15 @@ Medkit::Medkit(std::string _id, std::string _description, int _cost, int _life){
     life = _life;
 }
 
-void Grenade::effect(){
+void Grenade::effect(Entite attacker,std::vector<Entite> &defenders){
+    damage_zone(dommage, attacker, defenders);
+}
 
+Grenade::Grenade(std::string _id, std::string _description, int _cost, int _dommage){
+    id = _id;
+    description = _description;
+    cost = _cost;
+    dommage = _dommage;
 }
 
 
