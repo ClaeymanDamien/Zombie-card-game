@@ -17,7 +17,7 @@ public:
 protected:
     int m_pointsDeVie;
     int m_pointsDeDegats;
-    int m_defense;
+    int m_resistance;
     int m_force;
     int m_armure;
 };

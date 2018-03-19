@@ -17,13 +17,14 @@ Card::~Card(){
 void Card::add_life(int value,Entite &target){
     target.m_pointsDeVie += value;
 }
-<<<<<<< HEAD
+
 void Card::pull_life(int value, Entite attacker, Entite &defender){
-    defender.m_pointsDeVie -= value+attacker.m_force-defender.m_defense;
-=======
+    defender.m_pointsDeVie -= value+attacker.m_force-defender.m_resistance;
+}
+
 void Card::add_resistance(int value, Entite &target){
-    target.m_defense += value;
->>>>>>> 05cc0c1994b60f518aa1d120a9e706154bafee44
+    target.m_resistance += value;
+
 }
 
 void Card::play_card(bool _played){
@@ -39,23 +40,22 @@ void Lancepierre::effect(Entite attacker, Entite &defender){
     pull_life(dommage,attacker,defender);
 }
 
-<<<<<<< HEAD
 Lancepierre::Lancepierre(std::string _id, std::string _description, int _cost, int _dommage){
     id = _id;
     description = _description;
     cost = _cost;
     dommage = _dommage;
 }
-void Bouclier::effect(){
-    //add_resistance();
-=======
-Bouclier::Bouclier (std::string _id, std::string _description, int _cost, int _defense){
-    
+void Bouclier::effect(Entite &target){
+    add_resistance(resistance,target);
+}
+Bouclier::Bouclier (std::string _id, std::string _description, int _cost, int _resistance){
+
     id = _id;
     description = _description;
     cost = _cost;
-    defense = _defense;
->>>>>>> 05cc0c1994b60f518aa1d120a9e706154bafee44
+    resistance = _resistance;
+
 }
 
 

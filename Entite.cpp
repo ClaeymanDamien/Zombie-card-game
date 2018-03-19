@@ -3,14 +3,14 @@
 
 using namespace std;
 
-Entite::Entite() : m_pointsDeVie(100), m_defense(0), m_force(0)
+Entite::Entite() : m_pointsDeVie(100), m_resistance(0), m_force(0)
 {
 
 }
 
 void Entite::statistiques() const
 {
-    cout << "PV : " << m_pointsDeVie << endl;
+    cout << "PV : " << m_pointsDeVie << " R : " << m_resistance << endl;
 }
 
 void Entite::prendreDegats(int pointsDeDegats)

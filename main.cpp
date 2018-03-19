@@ -18,6 +18,8 @@ int main()
     medkit.effect(naruto);
     Lancepierre lancepierre;
     lancepierre.effect(naruto,sasuke);
+    Bouclier bouclier;
+    bouclier.effect(sasuke);
     cout << "Naruto: ";
     naruto.statistiques();
     cout << endl;

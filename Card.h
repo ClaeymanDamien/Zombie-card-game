@@ -22,7 +22,7 @@ void play_card(bool _played);
 void add_defense();
 void add_life(int value, Entite &target);
 void pull_life(int value, Entite attacker, Entite &defender);
-void add_resistance();
+void add_resistance(int value, Entite &target);
 void add_strength();
 
 
@@ -43,7 +43,7 @@ private:
     int resistance;
 public:
     void effect(Entite &target);
-    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _defense = 1 );
+    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1);
 };
 
 class Medkit : Card{
