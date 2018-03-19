@@ -3,6 +3,8 @@
 #include "gameloop.h"
 #include "Card.h"
 #include "Entite.h"
+#include "vector"
+#include "gameloop.h"
 using namespace std;
 
 int main()
@@ -57,5 +59,25 @@ int main()
     cout << endl;
 
     cout << "Welcome to Card Z" << endl;
-    return 0;
+
+    vector<Card*> deck, defausse, main;
+
+    for (int i = 0; i < 5; i++){
+        Card* lcp1=new Lancepierre();
+        Card* bcl1=new Bouclier;
+        deck.push_back(lcp1);
+        deck.push_back(bcl1);
+    }
+
+    vector<Entite*> Ennemis; // Liste des ennemis
+
+    //Entite* player; // Liste des joueurs
+
+    // Problème ici, affichage fonctionne, mais pas les transferts d'un tas à l'autre, pb de pointeurs probablement
+    draw(5,deck,main);
+    afficher(main);
+    afficher(deck);
+    hand_to_cemetary(main,defausse);
+    afficher(defausse);
+
 }
