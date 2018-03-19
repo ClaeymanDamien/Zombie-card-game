@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC6365BF20600E0D0049C314 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC6365BE20600E0D0049C314 /* main.cpp */; };
+		AC11F98520600FD300229592 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC11F97A20600FD100229592 /* Card.cpp */; };
+		AC11F98620600FD300229592 /* gameloop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC11F97B20600FD100229592 /* gameloop.cpp */; };
+		AC11F98720600FD300229592 /* Entite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC11F97F20600FD200229592 /* Entite.cpp */; };
+		AC11F98820600FD300229592 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC11F98120600FD200229592 /* main.cpp */; };
+		AC11F98A20600FEA00229592 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC11F98920600FEA00229592 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC11F97A20600FD100229592 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = SOURCE_ROOT; };
+		AC11F97B20600FD100229592 /* gameloop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gameloop.cpp; sourceTree = SOURCE_ROOT; };
+		AC11F97C20600FD200229592 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = SOURCE_ROOT; };
+		AC11F97D20600FD200229592 /* gameloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameloop.h; sourceTree = SOURCE_ROOT; };
+		AC11F97E20600FD200229592 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		AC11F97F20600FD200229592 /* Entite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entite.cpp; sourceTree = SOURCE_ROOT; };
+		AC11F98020600FD200229592 /* zombiecardgame.layout */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = zombiecardgame.layout; sourceTree = SOURCE_ROOT; };
+		AC11F98120600FD200229592 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		AC11F98220600FD300229592 /* Entite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entite.h; sourceTree = SOURCE_ROOT; };
+		AC11F98320600FD300229592 /* zombiecardgame.cbp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = zombiecardgame.cbp; sourceTree = SOURCE_ROOT; };
+		AC11F98420600FD300229592 /* zombiecardgame.depend */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombiecardgame.depend; sourceTree = SOURCE_ROOT; };
+		AC11F98920600FEA00229592 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
 		AC6365BB20600E0D0049C314 /* cardz */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cardz; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC6365BE20600E0D0049C314 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +72,18 @@
 		AC6365BD20600E0D0049C314 /* cardz */ = {
 			isa = PBXGroup;
 			children = (
-				AC6365BE20600E0D0049C314 /* main.cpp */,
+				AC11F97A20600FD100229592 /* Card.cpp */,
+				AC11F97C20600FD200229592 /* Card.h */,
+				AC11F97F20600FD200229592 /* Entite.cpp */,
+				AC11F98220600FD300229592 /* Entite.h */,
+				AC11F97B20600FD100229592 /* gameloop.cpp */,
+				AC11F97D20600FD200229592 /* gameloop.h */,
+				AC11F98120600FD200229592 /* main.cpp */,
+				AC11F97E20600FD200229592 /* README.md */,
+				AC11F98320600FD300229592 /* zombiecardgame.cbp */,
+				AC11F98420600FD300229592 /* zombiecardgame.depend */,
+				AC11F98020600FD200229592 /* zombiecardgame.layout */,
+				AC11F98920600FEA00229592 /* main.cpp */,
 			);
 			path = cardz;
 			sourceTree = "<group>";
@@ -119,7 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC6365BF20600E0D0049C314 /* main.cpp in Sources */,
+				AC11F98720600FD300229592 /* Entite.cpp in Sources */,
+				AC11F98620600FD300229592 /* gameloop.cpp in Sources */,
+				AC11F98A20600FEA00229592 /* main.cpp in Sources */,
+				AC11F98820600FD300229592 /* main.cpp in Sources */,
+				AC11F98520600FD300229592 /* Card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
