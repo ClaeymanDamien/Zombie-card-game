@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\entity.cpp
+	<string>
+
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
+
+1520871897 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
+	<iostream>
+	<string>
+	"gameloop.h"
+
+1520871897 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
+
+1520938622 source:c:\users\dclae\documents\github\zombie-card-game\card.cpp
+	<iostream>
+	<string>
+	"Card.h"
+	"Entity.h"
+
+1520924650 c:\users\dclae\documents\github\zombie-card-game\card.h
+	<string>
+	"Entity.h"
+
+1520871897 c:\users\dclae\documents\github\zombie-card-game\entity.h
+
