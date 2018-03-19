@@ -1,8 +1,10 @@
 #ifndef ENTITE_H_INCLUDED
 #define ENTITE_H_INCLUDED
+#include "Card.h"
 
 class Entite
 {
+    friend class Card;
 public:
     Entite();
     void statistiques() const;
@@ -12,7 +14,7 @@ public:
     void bouclier();
     void concentration();
 
-private:
+protected:
     int m_pointsDeVie;
     int m_pointsDeDegats;
     int m_defense;

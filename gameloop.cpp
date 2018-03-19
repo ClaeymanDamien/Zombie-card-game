@@ -1,11 +1,11 @@
-#include "Entity.h"
+#include "Entite.h"
 #include "Card.h"
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
-
+/**
 // Deck cartes
 vector<Card> deck[Tirer,Tirer,Tirer,Tirer,Tirer,Armure,Armure,Armure,Armure,Armure];
 
@@ -47,4 +47,4 @@ void draw(int nbr_cartes){
 
 }
 
-
+*/
