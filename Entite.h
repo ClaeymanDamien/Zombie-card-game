@@ -18,7 +18,7 @@ protected:
     int m_pointsDeVie;
     int m_pointsDeDegats;
     int m_resistance;
-    int m_force;
+    int m_strength;
     int m_armure;
 };
 
