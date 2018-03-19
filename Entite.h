@@ -6,11 +6,9 @@ class Entite
 {
     friend class Card;
 public:
-    Entite();
+    Entite(int _pointsDeVie=100, int _resistance=0, int _pointsDeDegats=0, int _strength = 0);
     void statistiques() const;
     void prendreDegats(int pointsDeDegats);
-    void mortier(Entite &cible);
-    void injection();
     void bouclier();
     void concentration();
 
@@ -19,7 +17,6 @@ protected:
     int m_pointsDeDegats;
     int m_resistance;
     int m_strength;
-    int m_armure;
 };
 
 #endif // ENTITE_H_INCLUDED

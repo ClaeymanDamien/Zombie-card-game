@@ -24,12 +24,8 @@ void play_card(bool _played);
 void add_life(int value, Entite &target);
 void pull_life(int value, Entite attacker, Entite &defender);
 void add_resistance(int value, Entite &target);
-<<<<<<< HEAD
-void add_strength();
 void damage_zone(int value, Entite attacker, std::vector<Entite> &defenders);
-=======
 void add_strength(int value, Entite &target);
->>>>>>> 31ba531b4bb60582184a483a75273cdbe07c7187
 
 
 };
@@ -73,7 +69,7 @@ private:
     int strength;
 public:
     void effect(Entite &target);
-    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 4);
+    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 1);
 };
 
 

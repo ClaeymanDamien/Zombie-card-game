@@ -33,7 +33,7 @@ void Card::damage_zone(int value, Entite attacker, std::vector<Entite> &defender
 }
 void Card::add_strength(int value, Entite &target){
     target.m_strength += value;
-    
+
 }
 
 
@@ -93,4 +93,12 @@ Grenade::Grenade(std::string _id, std::string _description, int _cost, int _domm
     dommage = _dommage;
 }
 
-
+void Steroide::effect(Entite &target){
+    add_strength(strength, target);
+}
+Steroide::Steroide(std::string _id, std::string _description, int _cost, int _strength){
+    id = _id;
+    description = _description;
+    cost = _cost;
+    strength = _strength;
+}

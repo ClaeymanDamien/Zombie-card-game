@@ -30,14 +30,18 @@ int main()
     cout <<endl;
     ennemis[2].statistiques();
     cout << endl;
+
     Medkit medkit;
     medkit.effect(naruto);
     Lancepierre lancepierre;
     lancepierre.effect(naruto,sasuke);
+    Steroide steroide;
+    steroide.effect(sasuke);
     Bouclier bouclier;
+    bouclier.effect(sasuke);
     Grenade grenade;
     grenade.effect(naruto,ennemis);
-    bouclier.effect(sasuke);
+
     cout << "Naruto: ";
     naruto.statistiques();
     cout << endl;
