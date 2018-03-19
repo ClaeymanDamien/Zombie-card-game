@@ -9,12 +9,15 @@ class Entite;
 class Card{
 
 protected:
-    std::string id;
-    std::string description;
-    int cost;
+
     bool played; //Si joue true;
 
 public:
+/// En attendant, je les met en public
+    std::string id;
+    std::string description;
+    int cost;
+
 
 Card(std::string _id = "Inconnue", std::string _description = "Pas de description", int _cost = 1);
 ~Card();
@@ -24,17 +27,16 @@ void play_card(bool _played);
 void add_life(int value, Entite &target);
 void pull_life(int value, Entite attacker, Entite &defender);
 void add_resistance(int value, Entite &target);
-<<<<<<< HEAD
+
 void add_strength();
 void damage_zone(int value, Entite attacker, std::vector<Entite> &defenders);
-=======
+
 void add_strength(int value, Entite &target);
->>>>>>> 31ba531b4bb60582184a483a75273cdbe07c7187
 
 
 };
 
-class Lancepierre : Card{
+class Lancepierre :public Card{
 private:
     int dommage;
 public:
@@ -44,7 +46,7 @@ Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance 
 
 };
 
-class Bouclier : Card{
+class Bouclier :public Card{
 private:
     int resistance;
 public:
@@ -52,7 +54,7 @@ public:
     Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1);
 };
 
-class Medkit : Card{
+class Medkit :public Card{
 private:
     int life;
 public:
@@ -60,7 +62,7 @@ public:
     Medkit(std::string _id = "Medkit", std::string _description = "C'est de la poudre de Perlimpinpin permettra. +4 points de vie", int _cost = 1, int _life = 4);
 };
 
-class Grenade : Card{
+class Grenade :public Card{
 private:
     int dommage;
 public:
@@ -68,7 +70,7 @@ public:
     Grenade(std::string _id = "Grenade", std::string _description = "L'orgie du paradis. -5 points de vie à tous les ennemies", int _cost = 1, int _dommage = 5);
 };
 
-class Steroide : Card{
+class Steroide :public Card{
 private:
     int strength;
 public:
