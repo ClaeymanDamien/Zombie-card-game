@@ -17,6 +17,9 @@ Card::~Card(){
 void Card::add_life(int value,Entite &target){
     target.m_pointsDeVie += value;
 }
+void Card::pull_life(int value, Entite attacker, Entite &defender){
+    defender.m_pointsDeVie -= value+attacker.m_force-defender.m_defense;
+}
 
 void Card::play_card(bool _played){
     if(_played){
@@ -27,13 +30,20 @@ void Card::play_card(bool _played){
     }
 }
 
-void Lancepierre::effect(){
-    //pull_life();
+void Lancepierre::effect(Entite attacker, Entite &defender){
+    pull_life(dommage,attacker,defender);
 }
 
+Lancepierre::Lancepierre(std::string _id, std::string _description, int _cost, int _dommage){
+    id = _id;
+    description = _description;
+    cost = _cost;
+    dommage = _dommage;
+}
 void Bouclier::effect(){
     //add_resistance();
 }
+
 
 void Medkit::effect(Entite &target){
     add_life(life,target);

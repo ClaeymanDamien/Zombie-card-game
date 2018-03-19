@@ -7,13 +7,23 @@ using namespace std;
 
 int main()
 {
-    Entite naruto;
+    Entite naruto, sasuke;
+    cout << "Naruto: ";
     naruto.statistiques();
-    Card soin;
-    soin.add_life(100,naruto);
+    cout << endl;
+    cout << "sasuke: ";
+    sasuke.statistiques();
+    cout << endl;
     Medkit medkit;
     medkit.effect(naruto);
+    Lancepierre lancepierre;
+    lancepierre.effect(naruto,sasuke);
+    cout << "Naruto: ";
     naruto.statistiques();
+    cout << endl;
+    cout << "sasuke: ";
+    sasuke.statistiques();
+    cout << endl;
     cout << "Welcome to Card Z" << endl;
     return 0;
 }
