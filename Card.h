@@ -1,7 +1,7 @@
 #ifndef CARD_H_INCLUDED
 #define CARD_H_INCLUDED
 #include <string>
-#include "Entity.h"
+#include "Entite.h"
 
 class Card{
 protected:
@@ -31,7 +31,7 @@ private:
 public:
 
 void effect();
-Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigisé dans la gueule des zombies", int _cost = 1, int dommage = 5);
+Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigises dans la gueule des zombies", int _cost = 1, int dommage = 5);
 
 };
 

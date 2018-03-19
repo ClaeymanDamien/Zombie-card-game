@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Card.h"
-#include "Entity.h"
+#include "Entite.h"
 using namespace std;
 
 Card::Card(std::string _id, std::string _description, int _cost){

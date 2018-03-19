@@ -85,7 +85,7 @@
 				AC11F98020600FD200229592 /* zombiecardgame.layout */,
 				AC11F98920600FEA00229592 /* main.cpp */,
 			);
-			path = cardz;
+			name = cardz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

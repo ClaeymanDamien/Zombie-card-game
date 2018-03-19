@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "Entite.h"
 #include "Card.h"
 #include <iostream>
 #include <string>
