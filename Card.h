@@ -4,20 +4,21 @@
 #include <vector>
 
 class Entite;
-
+class gameloop;
 
 class Card{
+
+    friend class Entite;
+    friend void afficher(std::vector<Card> main);
 
 protected:
 
     bool played; //Si joue true;
-
-public:
-/// En attendant, je les met en public
     std::string id;
     std::string description;
     int cost;
 
+public:
 
 Card(std::string _id = "Inconnue", std::string _description = "Pas de description", int _cost = 1);
 ~Card();

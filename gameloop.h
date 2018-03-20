@@ -10,12 +10,12 @@
 #include <vector> // std
 
 void gameloop();
-void afficherui();
+void afficherui(std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
+void afficher_ennemis(std::vector<Entite> ennemi);
 void clearconsole();
 void afficher(std::vector<Card> main);
-void hand_to_cemetary(std::vector<Card*> main,std::vector<Card*> defausse);
 void draw(int nbr_cartes,std::vector<Card> &deck,std::vector<Card> &main);
-void to_cemetery();
+void deck_to_another(std::vector<Card> &deck,std::vector<Card> &anotherdeck);
 
 
 #endif // GAMELOOP_H_INCLUDED

@@ -19,15 +19,40 @@ clearconsole();
 */
 
 // FONCTIONS
-void afficherui(){
+
+void afficher_ennemis(vector<Entite> ennemi){
+
+    if (ennemi.size() == 0){
+            cout << "Pas d'ennemi" <<endl;
+    }else{
+        for (unsigned int i = 0; i<ennemi.size();i++){
+            cout << "- " << ennemi[i].m_id << endl << "HP: " << ennemi[i].m_pointsDeVie <<endl <<"Résistance: "<<ennemi[i].m_resistance << endl <<"Puissance: "<< ennemi[i].m_strength;
+        }
+    }
+}
+
+void afficherui(vector<Card> &deck,vector<Card> &main,vector<Card> &defausse){
+cout <<endl<<"- Deck: "<< endl;
+afficher(deck);
+cout <<endl<<"- Main: "<< endl;
+afficher(main);
+cout <<endl<<"- Defausse: "<< endl;
+afficher(defausse);
+}
+
+void if_deck_empty(){
 
 }
 
 void afficher(vector<Card> main){
-    cout << "Main du joueur:" << endl;
+
+    if (main.size() == 0){
+            cout << "Vide" <<endl;
+    }else{
         for (unsigned int i = 0; i<main.size();i++){
             cout << "- " << main[i].cost << " " << main[i].id <<endl;
         }
+    }
 }
 
 void clearconsole(){
@@ -36,11 +61,6 @@ void clearconsole(){
 
 void lose(){
 
-}
-
-void hand_to_cemetary(vector<Card*> main,vector<Card*> defausse){
-    copy (main.begin(),main.end(),defausse.begin()); //
-    main.clear();
 }
 
 
@@ -54,6 +74,6 @@ void draw(int nbr_cartes,vector<Card> &deck,vector<Card> &main){
     }
 }
 
-
-void to_cemetery(){}
-
+void deck_to_another(vector<Card> &deck,vector<Card> &anotherdeck){
+draw(deck.size(),deck,anotherdeck);
+}

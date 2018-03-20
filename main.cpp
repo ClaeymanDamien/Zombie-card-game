@@ -70,6 +70,7 @@ int main()
     cout << "Welcome to Card Z" << endl;
 
     vector<Card> deck, defausse, main;
+    //int mana,tour;
 
     for (int i = 0; i < 5; i++){
         Card *lcp1=new Lancepierre;
@@ -80,16 +81,9 @@ int main()
 
     vector<Entite> adversaires; // Liste des ennemis
 
-    afficher(deck);
-    //Entite* player; // Liste des joueurs
-
-    // Edit by Damien CLAEYMAN (Fonctionnel)
     draw(5,deck,main);
-    cout << "Ca marche: " << endl;
-    afficher(deck);
-
-    /*afficher(deck);
-    hand_to_cemetary(main,defausse);
-    afficher(defausse);*/
+    //afficher(deck);
+    deck_to_another(main,defausse);
+    afficherui(deck,main,defausse);
 
 }

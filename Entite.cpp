@@ -3,12 +3,13 @@
 
 using namespace std;
 
-Entite::Entite(int _pointsDeVie, int _resistance, int _pointsDeDegats, int _strength)  //m_pointsDeVie(100), m_resistance(0), m_pointsDeDegats(0), m_strength(0)
+Entite::Entite(int _pointsDeVie, int _resistance, int _pointsDeDegats, int _strength,string _id)  //m_pointsDeVie(100), m_resistance(0), m_pointsDeDegats(0), m_strength(0)
 {
     m_pointsDeVie = _pointsDeVie;
     m_resistance = _resistance;
     m_pointsDeDegats = _pointsDeDegats;
     m_strength = _strength;
+    m_id = _id;
 }
 
 void Entite::statistiques() const

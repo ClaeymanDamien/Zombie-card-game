@@ -49,24 +49,26 @@
 	"Entite.h"
 	<iostream>
 
-1521488500 source:c:\users\emrick\documents\github\zombie-card-game\card.cpp
+1521577745 source:c:\users\emrick\documents\github\zombie-card-game\card.cpp
 	<iostream>
 	<string>
 	"Card.h"
 	"Entite.h"
 
-1521488796 c:\users\emrick\documents\github\zombie-card-game\card.h
+1521585672 c:\users\emrick\documents\github\zombie-card-game\card.h
 	<string>
 	<vector>
 
-1521488500 c:\users\emrick\documents\github\zombie-card-game\entite.h
+1521585601 c:\users\emrick\documents\github\zombie-card-game\entite.h
 	"Card.h"
+	"string"
+	<vector>
 
-1521488500 source:c:\users\emrick\documents\github\zombie-card-game\entite.cpp
+1521583144 source:c:\users\emrick\documents\github\zombie-card-game\entite.cpp
 	"Entite.h"
 	<iostream>
 
-1521490231 source:c:\users\emrick\documents\github\zombie-card-game\gameloop.cpp
+1521583622 source:c:\users\emrick\documents\github\zombie-card-game\gameloop.cpp
 	"Entite.h"
 	"Card.h"
 	"gameloop.h"
@@ -76,7 +78,7 @@
 	<string>
 	<vector>
 
-1521490236 c:\users\emrick\documents\github\zombie-card-game\gameloop.h
+1521585459 c:\users\emrick\documents\github\zombie-card-game\gameloop.h
 	"Entite.h"
 	"Card.h"
 	<iostream>
@@ -85,7 +87,7 @@
 	<string>
 	<vector>
 
-1521489655 source:c:\users\emrick\documents\github\zombie-card-game\main.cpp
+1521581168 source:c:\users\emrick\documents\github\zombie-card-game\main.cpp
 	<iostream>
 	<string>
 	"gameloop.h"
@@ -100,6 +102,16 @@
 	<iostream>
 
 1521483318 c:\users\dclae\documents\github\zombie-card-game\humain.h
+	<iostream>
+	<string>
+	"Entite.h"
+
+1521577745 source:c:\users\emrick\documents\github\zombie-card-game\humain.cpp
+	"Humain.h"
+	"Entite.h"
+	<iostream>
+
+1521577745 c:\users\emrick\documents\github\zombie-card-game\humain.h
 	<iostream>
 	<string>
 	"Entite.h"
