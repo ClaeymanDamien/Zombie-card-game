@@ -36,6 +36,8 @@
 		<Unit filename="Card.h" />
 		<Unit filename="Entite.cpp" />
 		<Unit filename="Entite.h" />
+		<Unit filename="Humain.cpp" />
+		<Unit filename="Humain.h" />
 		<Unit filename="gameloop.cpp" />
 		<Unit filename="gameloop.h" />
 		<Unit filename="main.cpp" />

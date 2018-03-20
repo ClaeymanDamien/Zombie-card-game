@@ -23,10 +23,10 @@ void afficherui(){
 
 }
 
-void afficher(vector<Card*> main){
+void afficher(vector<Card> main){
     cout << "Main du joueur:" << endl;
         for (unsigned int i = 0; i<main.size();i++){
-            cout << "- " << main[i]->cost << " " << main[i]->id <<endl;
+            cout << "- " << main[i].cost << " " << main[i].id <<endl;
         }
 }
 
@@ -44,7 +44,7 @@ void hand_to_cemetary(vector<Card*> main,vector<Card*> defausse){
 }
 
 
-void draw(int nbr_cartes,vector<Card*> deck,vector<Card*> main){
+void draw(int nbr_cartes,vector<Card> &deck,vector<Card> &main){
      for (int i = 0; i < nbr_cartes; i++){
         int tirage = rand()%deck.size();
         //cout << tirage << deck[tirage]->id <<endl; // Debug, ligne fonctionnelle

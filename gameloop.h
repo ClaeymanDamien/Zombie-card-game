@@ -12,9 +12,9 @@
 void gameloop();
 void afficherui();
 void clearconsole();
-void afficher(std::vector<Card*> main);
+void afficher(std::vector<Card> main);
 void hand_to_cemetary(std::vector<Card*> main,std::vector<Card*> defausse);
-void draw(int nbr_cartes,std::vector<Card*> deck,std::vector<Card*> main);
+void draw(int nbr_cartes,std::vector<Card> &deck,std::vector<Card> &main);
 void to_cemetery();
 
 
