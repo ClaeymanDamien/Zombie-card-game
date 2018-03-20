@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 
-    Entite naruto, sasuke;
+    Entite zombie, rampant, infecte;
     vector<Entite> ennemis;
     Entite *kakashi = new Entite;
     ennemis.push_back(*kakashi);
@@ -19,12 +19,17 @@ int main()
     Entite *lee = new Entite;
     ennemis.push_back(*lee);
 
-    cout << "Naruto: ";
-    naruto.statistiques();
+    cout << "zombie: ";
+    zombie.statistiques();
     cout << endl;
-    cout << "sasuke: ";
-    sasuke.statistiques();
+    cout << "rampant: ";
+    rampant.statistiques();
     cout << endl;
+    cout << "infecte: ";
+    infecte.statistiques();
+    cout << endl;
+
+
     cout << "Les ennemis: " <<endl;
     ennemis[0].statistiques();
     cout << endl;
@@ -34,21 +39,25 @@ int main()
     cout << endl;
 
     Medkit medkit;
-    medkit.effect(naruto);
+    medkit.effect(zombie);
     Lancepierre lancepierre;
-    lancepierre.effect(naruto,sasuke);
+    lancepierre.effect(zombie,rampant);
     Steroide steroide;
-    steroide.effect(sasuke);
+    steroide.effect(rampant);
     Bouclier bouclier;
-    bouclier.effect(sasuke);
+    bouclier.effect(rampant);
     Grenade grenade;
-    grenade.effect(naruto,ennemis);
+    grenade.effect(zombie,ennemis);
+    lancepierre.effect(infecte, zombie);
 
-    cout << "Naruto: ";
-    naruto.statistiques();
+    cout << "zombie: ";
+    zombie.statistiques();
     cout << endl;
-    cout << "sasuke: ";
-    sasuke.statistiques();
+    cout << "rampant: ";
+    rampant.statistiques();
+    cout << endl;
+    cout << "infecte: ";
+    infecte.statistiques();
     cout << endl;
     cout << "Les ennemis: " <<endl;
     ennemis[0].statistiques();

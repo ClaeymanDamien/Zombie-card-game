@@ -63,7 +63,7 @@ private:
     int dommage;
 public:
     void effect(Entite attacker,std::vector<Entite> &defenders);
-    Grenade(std::string _id = "Grenade", std::string _description = "L'orgie du paradis. -5 points de vie à tous les ennemies", int _cost = 1, int _dommage = 5);
+    Grenade(std::string _id = "Grenade", std::string _description = "L'orgie du paradis. -5 points de vie a tous les ennemies", int _cost = 1, int _dommage = 5);
 };
 
 class Steroide :public Card{
