@@ -10,6 +10,7 @@ class Card{
 
     friend class Entite;
     friend void afficher(std::vector<Card> main);
+    friend void card_played(int &PA,int choix_carte, int choix_ennemi, std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
 
 protected:
 

@@ -5,11 +5,12 @@
 #include "Entite.h"
 #include "vector"
 #include "gameloop.h"
+#include "time.h"
 using namespace std;
 
 int main()
 {
-
+    /*
     Entite zombie, rampant, infecte;
     vector<Entite> ennemis;
     Entite *kakashi = new Entite;
@@ -65,13 +66,15 @@ int main()
     ennemis[1].statistiques();
     cout <<endl;
     ennemis[2].statistiques();
-    cout << endl;
+    cout << endl; */
 
-    cout << "Welcome to Card Z" << endl;
+    vector<Card> deck, defausse, main, choixcarte;
+    vector<Entite> ennemis,poolmonstre;
 
-    vector<Card> deck, defausse, main;
+    srand (time(NULL));
     //int mana,tour;
 
+    // Deck de base
     for (int i = 0; i < 5; i++){
         Card *lcp1=new Lancepierre;
         Card *bcl1=new Bouclier;
@@ -79,11 +82,13 @@ int main()
         deck.push_back(*bcl1);
     }
 
-    vector<Entite> adversaires; // Liste des ennemis
+    // Ajout des ennemis
+    for (int i = 0; i < 5; i++){
+        Entite *enmy1=new Entite;
+        ennemis.push_back(*enmy1);
+    }
 
-    draw(5,deck,main);
-    //afficher(deck);
-    deck_to_another(main,defausse);
-    afficherui(deck,main,defausse);
+    gameloop(ennemis,deck,main,defausse);
 
+    return 0;
 }

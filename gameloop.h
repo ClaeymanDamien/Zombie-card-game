@@ -9,13 +9,20 @@
 #include <string>
 #include <vector> // std
 
-void gameloop();
-void afficherui(std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
-void afficher_ennemis(std::vector<Entite> ennemi);
+using namespace std;
+
+void afficherui(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse);
+void afficher_ennemis(vector<Entite> ennemi);
 void clearconsole();
-void afficher(std::vector<Card> main);
-void draw(int nbr_cartes,std::vector<Card> &deck,std::vector<Card> &main);
-void deck_to_another(std::vector<Card> &deck,std::vector<Card> &anotherdeck);
+void loading();
+void afficher(vector<Card> main);
+void draw(int nbr_cartes,vector<Card> &deck,vector<Card> &main);
+void deck_to_another(vector<Card> &deck,vector<Card> &anotherdeck);
+void delay(float time_to_wait);
+int prompt_card(int PA,vector<Card> &main);
+void move_card(int choix_carte, vector<Card> &deck,vector<Card> &anotherdeck);
+void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse);
+void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse);
 
 
 #endif // GAMELOOP_H_INCLUDED
