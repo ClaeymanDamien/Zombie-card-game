@@ -137,6 +137,14 @@ void create_card_choice(vector<Card> &pool_of_cards,vector<Card> &choice_of_card
 // Grosse fonction à réfléchir avec damien, comment détecter le type de carte utilisée ?? Car si heal ou AOE, pas besoin de choisir une cible ! :D
 void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse){
 
+if(main[choix_carte].target_type == 1){ // Attaque normale
+    //main[choix_carte].effect(ennemis[prompt_entity(ennemis)]);
+} else if(main[choix_carte].target_type == 2) { // AOE
+    //main[choix_carte].effect(ennemis);
+} else { // Buff car target_type == 0
+    //main[choix_carte].effect();
+}
+
 PA = PA - main[choix_carte].cost;
 move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 }

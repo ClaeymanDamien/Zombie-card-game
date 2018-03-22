@@ -151,7 +151,7 @@
 	<string>
 	"Entite.h"
 
-1521710044 source:c:\users\20160399\documents\github\zombie-card-game\main.cpp
+1521713944 source:c:\users\20160399\documents\github\zombie-card-game\main.cpp
 	<iostream>
 	<string>
 	"gameloop.h"
@@ -160,6 +160,7 @@
 	"vector"
 	"gameloop.h"
 	"time.h"
+	"Humain.h"
 
 1521711696 c:\users\20160399\documents\github\zombie-card-game\gameloop.h
 	"Entite.h"
@@ -170,7 +171,7 @@
 	<string>
 	<vector>
 
-1521711551 source:c:\users\20160399\documents\github\zombie-card-game\gameloop.cpp
+1521714983 source:c:\users\20160399\documents\github\zombie-card-game\gameloop.cpp
 	"Entite.h"
 	"Card.h"
 	"gameloop.h"
