@@ -23,11 +23,16 @@ class Soldat : public Entite
 {
 public:
     Soldat();
-     void mortier(Entite &cible);
+     void mortier(Entite &target); // target represente le personnage choisi
+     void lanceRoquette(Entite &target);
+     void bouclier(Entite &target, int value);
+     void attaque(Entite &target);
+
 
 private:
-    int m_armure;
+
 
 };
 
 #endif // HUMAIN_H_INCLUDED
+
