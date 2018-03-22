@@ -15,7 +15,7 @@ int main()
 
 
 
-    vector<Card> deck, defausse, main, choixcarte,poolcartes;
+    vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite> ennemis,poolennemis;
 
     srand (time(NULL));
@@ -25,8 +25,8 @@ int main()
     for (int i = 0; i < 5; i++){
         Lancepierre *lcp1=new Lancepierre;
         Bouclier *bcl1=new Bouclier;
-        deck.push_back(*lcp1);
-        deck.push_back(*bcl1);
+        deck.push_back(lcp1);
+        deck.push_back(bcl1);
     }
 
     // Pool d'ennemis
@@ -41,16 +41,16 @@ int main()
     poolennemis.push_back(*enmy4);
 
     // Pool de cartes
-    Card *chx1 = new Lancepierre;
-    Card *chx2 = new Medkit;
-    Card *chx3 = new Grenade;
-    Card *chx4 = new Bouclier;
-    Card *chx5 = new Steroide;
-    poolcartes.push_back(*chx1);
-    poolcartes.push_back(*chx2);
-    poolcartes.push_back(*chx3);
-    poolcartes.push_back(*chx4);
-    poolcartes.push_back(*chx5);
+    Lancepierre *chx1 = new Lancepierre;
+    Medkit *chx2 = new Medkit;
+    Grenade *chx3 = new Grenade;
+    Bouclier *chx4 = new Bouclier;
+    Steroide *chx5 = new Steroide;
+    poolcartes.push_back(chx1);
+    poolcartes.push_back(chx2);
+    poolcartes.push_back(chx3);
+    poolcartes.push_back(chx4);
+    poolcartes.push_back(chx5);
 
     // Ajout des ennemis
     for (int i = 0; i < 5; i++){
@@ -61,30 +61,6 @@ int main()
     gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
 
         // Test Soldat
-/*
-    cout << endl;
-
-    Soldat Allemand, Francais;
-    cout << "PV de l'allemand avant l'attaque" << endl;
-    Allemand.statistiques();
-    cout << "PV du francais avant l'attaque" << endl;
-    Francais.statistiques();
-
-
-    Allemand.mortier(Francais);
-    Francais.lanceRoquette(Allemand);
-    cout << "PV de l'allemand apres l'attaque" << endl;
-    Allemand.statistiques();
-    cout << "PV du francais apres l'attaque" << endl;
-    Francais.statistiques();
-*/
-    Soldat Pierre;
-
-    cout << "PV de Pierre avant l'attaque" << endl;
-    Pierre.statistiques();
-    Pierre.attaque(Pierre);
-    cout << "PV de Pierre apres l'attaque" << endl;
-    Pierre.statistiques();
 
     return 0;
 }
