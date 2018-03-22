@@ -6,6 +6,8 @@
 #include "vector"
 #include "gameloop.h"
 #include "time.h"
+#include "Humain.h"
+
 using namespace std;
 
 int main()
@@ -68,6 +70,8 @@ int main()
     ennemis[2].statistiques();
     cout << endl; */
 
+
+
     vector<Card> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite> ennemis,poolennemis;
 
@@ -112,6 +116,32 @@ int main()
     }
 
     gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
+
+        // Test Soldat
+/*
+    cout << endl;
+
+    Soldat Allemand, Francais;
+    cout << "PV de l'allemand avant l'attaque" << endl;
+    Allemand.statistiques();
+    cout << "PV du francais avant l'attaque" << endl;
+    Francais.statistiques();
+
+
+    Allemand.mortier(Francais);
+    Francais.lanceRoquette(Allemand);
+    cout << "PV de l'allemand apres l'attaque" << endl;
+    Allemand.statistiques();
+    cout << "PV du francais apres l'attaque" << endl;
+    Francais.statistiques();
+*/
+    Soldat Pierre;
+
+    cout << "PV de Pierre avant l'attaque" << endl;
+    Pierre.statistiques();
+    Pierre.attaque(Pierre);
+    cout << "PV de Pierre apres l'attaque" << endl;
+    Pierre.statistiques();
 
     return 0;
 }
