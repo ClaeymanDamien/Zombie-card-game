@@ -16,7 +16,7 @@ int main()
 
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
-    vector<Entite> ennemis,poolennemis;
+    vector<Entite*> ennemis,poolennemis;
     Entite player;
     srand (time(NULL));
     //int mana,tour;
@@ -32,13 +32,13 @@ int main()
     // Pool d'ennemis
 
     Entite *enmy1 = new Medecin;
-    poolennemis.push_back(*enmy1);
+    poolennemis.push_back(enmy1);
     Entite *enmy2 = new Soldat;
-    poolennemis.push_back(*enmy2);
+    poolennemis.push_back(enmy2);
     Entite *enmy3 = new Medecin;
-    poolennemis.push_back(*enmy3);
+    poolennemis.push_back(enmy3);
     Entite *enmy4 = new Soldat;
-    poolennemis.push_back(*enmy4);
+    poolennemis.push_back(enmy4);
 
     // Pool de cartes
     Lancepierre *chx1 = new Lancepierre;
@@ -55,10 +55,10 @@ int main()
     // Ajout des ennemis
     for (int i = 0; i < 5; i++){
         Entite *enmy1=new Entite;
-        ennemis.push_back(*enmy1);
+        ennemis.push_back(enmy1);
     }
 
-    deck[0]->effect();
+//    deck[1]->effect(player,ennemis[0],ennemis);
 
     gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
 

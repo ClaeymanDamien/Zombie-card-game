@@ -29,19 +29,19 @@ void loading(){
     delay(0.5);
 }
 
-void afficher_ennemis(vector<Entite> ennemi){
+void afficher_ennemis(vector<Entite*> ennemi){
 
     if (ennemi.size() == 0){
             cout << "Pas d'ennemi" <<endl;
     }else{
         for (unsigned int i = 0; i<ennemi.size();i++){
-            cout << "- " << i+1 << " | Type: "<< ennemi[i].m_id << " HP: " << ennemi[i].m_pointsDeVie << " Res: "<<ennemi[i].m_resistance <<" Puiss: "<< ennemi[i].m_strength << endl;
+            cout << "- " << i+1 << " | Type: "<< ennemi[i]->m_id << " HP: " << ennemi[i]->m_pointsDeVie << " Res: "<<ennemi[i]->m_resistance <<" Puiss: "<< ennemi[i]->m_strength << endl;
         }
     }
     cout << "___________________________________________________________" << endl;
 }
 
-void afficherui(vector<Entite> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse){
+void afficherui(vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse){
 cout <<endl<<"- Ennemis: "<< endl;
 afficher_ennemis(ennemis);
 cout <<endl<<"- Deck: "<< endl;
@@ -102,7 +102,7 @@ int prompt_card(int PA,vector<Card*> &main){
     return 0;
 }
 
-int prompt_entity(vector<Entite> &ennemis){
+int prompt_entity(vector<Entite*> &ennemis){
     cout << endl << "Quelle va etre votre cible ?" << endl << "Votre choix: " ;
     int taille_ennemis_max = ennemis.size(),choix;
     cin >> choix;
@@ -135,7 +135,7 @@ void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_ca
 }
 
 // Grosse fonction à réfléchir avec damien, comment détecter le type de carte utilisée ?? Car si heal ou AOE, pas besoin de choisir une cible ! :D
-void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse){
+void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse){
 
 /*if(main[choix_carte].target_type == 1){ // Attaque normale
     //main[choix_carte].effect(ennemis[prompt_entity(ennemis)]);
@@ -152,7 +152,7 @@ move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 
 // Gameloop finale
 
-void gameloop(vector<Entite> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards){
+void gameloop(vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards){
     int PA=3,choix_carte,choix_ennemi;
 
 
