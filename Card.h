@@ -11,7 +11,8 @@ class Card{
     friend class Entite;
     friend void afficher(std::vector<Card> main);
     friend void card_played(int &PA,int choix_carte, int choix_ennemi, std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
-    friend void gameloop(std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
+    friend void gameloop(std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse,std::vector<Card> &pool_of_cards,std::vector<Card> &choice_of_cards);
+
 
 protected:
 
