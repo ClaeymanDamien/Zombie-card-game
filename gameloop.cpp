@@ -94,7 +94,7 @@ int prompt_card(int PA,vector<Card> &main){
     int taille_main_max = main.size(),choix;
     cin >> choix;
     if (choix >= 0 && choix <= taille_main_max){
-        return choix;
+        return choix-1;
     } else {
     cout << endl << "Choix invalide !" << endl;
     prompt_card(PA, main);
@@ -107,7 +107,7 @@ int prompt_entity(vector<Entite> &ennemis){
     int taille_ennemis_max = ennemis.size(),choix;
     cin >> choix;
     if (choix >= 0 && choix <= taille_ennemis_max){
-        return choix;
+        return choix-1;
     } else {
     cout << endl << "Choix invalide !" << endl;
     prompt_entity(ennemis);
@@ -122,6 +122,18 @@ void move_card(int choix_carte, vector<Card> &deck,vector<Card> &anotherdeck){
     deck.erase(deck.begin()+choix_carte); // Supprime la carte du deck
 }
 
+void copy_card(int choix_carte, vector<Card> &deck,vector<Card> &anotherdeck){
+
+    anotherdeck.push_back(deck[choix_carte]); // Ajoute la carte du deck � la main
+}
+
+void create_card_choice(vector<Card> &pool_of_cards,vector<Card> &choice_of_cards){
+    for (int i = 0; i < 3; i++){
+        int tirage = rand()%pool_of_cards.size();
+        copy_card(tirage,pool_of_cards,choice_of_cards);
+    }
+}
+
 // Grosse fonction à réfléchir avec damien, comment détecter le type de carte utilisée ?? Car si heal ou AOE, pas besoin de choisir une cible ! :D
 void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse){
 
@@ -132,13 +144,16 @@ move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 
 // Gameloop finale
 
-void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse){
+void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse,vector<Card> &pool_of_cards,vector<Card> &choice_of_cards){
     int PA=3,choix_carte,choix_ennemi;
+
+
 
     // Démarrage de la partie
     afficherui(ennemis,deck,main,defausse);
     loading();
     draw(5,deck,main);
+    create_card_choice(pool_of_cards,choice_of_cards);
     clearconsole();
 
     // Début de la boucle de jeu

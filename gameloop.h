@@ -21,8 +21,8 @@ void deck_to_another(vector<Card> &deck,vector<Card> &anotherdeck);
 void delay(float time_to_wait);
 int prompt_card(int PA,vector<Card> &main);
 void move_card(int choix_carte, vector<Card> &deck,vector<Card> &anotherdeck);
-void card_played(int &PA,int choix_carte, int choix_ennemi, vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse);
-void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse);
+void copy_card(int choix_carte, vector<Card> &deck,vector<Card> &anotherdeck);
+void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vector<Card> &defausse,vector<Card> &pool_of_cards,vector<Card> &choice_of_cards);
 
 
 #endif // GAMELOOP_H_INCLUDED
