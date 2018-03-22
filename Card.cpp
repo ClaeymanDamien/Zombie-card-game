@@ -13,6 +13,7 @@ Card::Card(std::string _id, std::string _description, int _cost){
 Card::~Card(){
 
 }
+void Card::effect(){};
 
 void Card::add_life(int value,Entite &target){
     target.m_pointsDeVie += value;

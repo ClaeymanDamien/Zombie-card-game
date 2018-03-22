@@ -13,11 +13,9 @@ using namespace std;
 int main()
 {
 
-
-
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite> ennemis,poolennemis;
-
+    Entite player;
     srand (time(NULL));
     //int mana,tour;
 
@@ -58,9 +56,9 @@ int main()
         ennemis.push_back(*enmy1);
     }
 
-    gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
+    deck[0]->effect();
 
-        // Test Soldat
+    gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
 
     return 0;
 }
