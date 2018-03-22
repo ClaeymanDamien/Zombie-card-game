@@ -11,6 +11,7 @@ class Card{
     friend class Entite;
     friend void afficher(std::vector<Card> main);
     friend void card_played(int &PA,int choix_carte, int choix_ennemi, std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
+    friend void gameloop(std::vector<Entite> &ennemis,std::vector<Card> &deck,std::vector<Card> &main,std::vector<Card> &defausse);
 
 protected:
 
@@ -18,6 +19,7 @@ protected:
     std::string id;
     std::string description;
     int cost;
+    int target_type; //0 = buff, 1 = 1 attack one entite, 2 = AOE
 
 public:
 
@@ -40,7 +42,7 @@ private:
 public:
 
 void effect(Entite attacker, Entite &defender);
-Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigises dans la gueule des zombies", int _cost = 1, int _dommage = 6);
+Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigises dans la gueule des zombies", int _cost = 1, int _dommage = 6, int _target_type = 1);
 
 };
 
@@ -49,7 +51,7 @@ private:
     int resistance;
 public:
     void effect(Entite &target);
-    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1);
+    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1, int _target_type = 0);
 };
 
 class Medkit :public Card{
@@ -57,7 +59,7 @@ private:
     int life;
 public:
     void effect(Entite &target);
-    Medkit(std::string _id = "Medkit", std::string _description = "C'est de la poudre de Perlimpinpin permettra. +4 points de vie", int _cost = 1, int _life = 4);
+    Medkit(std::string _id = "Medkit", std::string _description = "C'est de la poudre de Perlimpinpin permettra. +4 points de vie", int _cost = 1, int _life = 4, int _target_type = 0);
 };
 
 class Grenade :public Card{
@@ -65,7 +67,7 @@ private:
     int dommage;
 public:
     void effect(Entite attacker,std::vector<Entite> &defenders);
-    Grenade(std::string _id = "Grenade", std::string _description = "L'orgie du paradis. -5 points de vie a tous les ennemies", int _cost = 1, int _dommage = 5);
+    Grenade(std::string _id = "Grenade", std::string _description = "L'orgie du paradis. -5 points de vie a tous les ennemies", int _cost = 1, int _dommage = 5, int _target_type = 2);
 };
 
 class Steroide :public Card{
@@ -73,7 +75,7 @@ private:
     int strength;
 public:
     void effect(Entite &target);
-    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 1);
+    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 1, int _target_type = 0);
 };
 
 
