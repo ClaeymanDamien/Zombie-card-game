@@ -161,6 +161,13 @@ void gameloop(vector<Entite> &ennemis,vector<Card> &deck,vector<Card> &main,vect
         afficherui(ennemis,deck,main,defausse);
         choix_carte=prompt_card(PA, main);
         // If card_type =! AOE =! HEAL =! BOOST
+        if(main[choix_carte].target_type == 0){ //Type Buff
+
+        }else if(main[choix_carte].target_type == 1){ //Type one opponent
+
+        }else if(main[choix_carte].target_type == 2){ //Type AOE
+
+        }
         choix_ennemi=prompt_entity(ennemis);
         card_played(PA,choix_carte,choix_ennemi,ennemis,deck,main,defausse);
         loading();

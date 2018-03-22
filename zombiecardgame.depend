@@ -2,7 +2,7 @@
 1520871897 source:c:\users\dclae\documents\github\zombie-card-game\entity.cpp
 	<string>
 
-1521577147 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
+1521709677 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
 	"Entite.h"
 	"Card.h"
 	"gameloop.h"
@@ -11,8 +11,9 @@
 	<utility>
 	<string>
 	<vector>
+	<time.h>
 
-1521577172 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
+1521709677 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
 	<iostream>
 	<string>
 	"gameloop.h"
@@ -20,8 +21,9 @@
 	"Entite.h"
 	"vector"
 	"gameloop.h"
+	"time.h"
 
-1521577058 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
+1521709677 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
 	"Entite.h"
 	"Card.h"
 	<iostream>
@@ -30,22 +32,24 @@
 	<string>
 	<vector>
 
-1521496255 source:c:\users\dclae\documents\github\zombie-card-game\card.cpp
+1521710701 source:c:\users\dclae\documents\github\zombie-card-game\card.cpp
 	<iostream>
 	<string>
 	"Card.h"
 	"Entite.h"
 
-1521496446 c:\users\dclae\documents\github\zombie-card-game\card.h
+1521711465 c:\users\dclae\documents\github\zombie-card-game\card.h
 	<string>
 	<vector>
 
 1520871897 c:\users\dclae\documents\github\zombie-card-game\entity.h
 
-1521495775 c:\users\dclae\documents\github\zombie-card-game\entite.h
+1521709677 c:\users\dclae\documents\github\zombie-card-game\entite.h
 	"Card.h"
+	"string"
+	<vector>
 
-1521495960 source:c:\users\dclae\documents\github\zombie-card-game\entite.cpp
+1521709677 source:c:\users\dclae\documents\github\zombie-card-game\entite.cpp
 	"Entite.h"
 	<iostream>
 
@@ -98,12 +102,12 @@
 	"gameloop.h"
 	"time.h"
 
-1521483318 source:c:\users\dclae\documents\github\zombie-card-game\humain.cpp
+1521709677 source:c:\users\dclae\documents\github\zombie-card-game\humain.cpp
 	"Humain.h"
 	"Entite.h"
 	<iostream>
 
-1521483318 c:\users\dclae\documents\github\zombie-card-game\humain.h
+1521709677 c:\users\dclae\documents\github\zombie-card-game\humain.h
 	<iostream>
 	<string>
 	"Entite.h"
