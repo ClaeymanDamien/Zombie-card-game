@@ -7,11 +7,13 @@
 #include "gameloop.h"
 #include "time.h"
 #include "Humain.h"
+#include "Zombie.h"
 
 using namespace std;
 
 int main()
 {
+
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite> ennemis,poolennemis;

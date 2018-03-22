@@ -38,6 +38,10 @@
 		<Unit filename="Entite.h" />
 		<Unit filename="Humain.cpp" />
 		<Unit filename="Humain.h" />
+		<Unit filename="TypesDeZombies.cpp" />
+		<Unit filename="TypesDeZombies.h" />
+		<Unit filename="Zombie.cpp" />
+		<Unit filename="Zombie.h" />
 		<Unit filename="gameloop.cpp" />
 		<Unit filename="gameloop.h" />
 		<Unit filename="main.cpp" />
