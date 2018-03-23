@@ -12,8 +12,8 @@ class Card{
 
     friend class Entite;
     friend void afficher(std::vector<Card*> main);
-    friend void card_played(int &PA,int choix_carte, int choix_ennemi, std::vector<Entite*> &ennemis,std::vector<Card*> &deck,std::vector<Card*> &main,std::vector<Card*> &defausse);
-    friend void gameloop(vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards);
+    friend void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse);
+    friend void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards);
 
 
 protected:
@@ -31,11 +31,11 @@ virtual ~Card();
 void target_entity(Entite &cible);
 void play_card(bool _played);
 void add_life(int value, Entite &target) const;
-void pull_life(int value, Entite attacker, Entite &defender) const;
+void pull_life(int value, Entite &attacker, Entite *defender) const;
 void add_resistance(int value, Entite &target) const;
-void damage_zone(int value, Entite attacker, std::vector<Entite*> &defenders) const;
+//void damage_zone(int value, Entite attacker, std::vector<Entite*> &defenders) const;
 void add_strength(int value, Entite &target)const;
-virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
+virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
 
 
 };
@@ -45,7 +45,7 @@ private:
     int dommage;
 public:
 Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigises dans la gueule des zombies", int _cost = 1, int _dommage = 6, int _target_type = 1);
-virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
+virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
 virtual ~Lancepierre();
 
 };
@@ -55,7 +55,7 @@ private:
     int resistance;
 public:
     Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1, int _target_type = 0);
-    virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
+    virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Bouclier();
 };
 
@@ -64,10 +64,10 @@ private:
     int life;
 public:
     Medkit(std::string _id = "Medkit", std::string _description = "C'est de la poudre de Perlimpinpin permettra. +4 points de vie", int _cost = 1, int _life = 4, int _target_type = 0);
-    virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
+    virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Medkit();
 };
-
+/*
 class Grenade :public Card{
 private:
     int dommage;
@@ -76,13 +76,13 @@ public:
     virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
     virtual ~Grenade();
 };
-
+*/
 class Steroide :public Card{
 private:
     int strength;
 public:
     Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 1, int _target_type = 0);
-    virtual void effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const;
+    virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Steroide();
 };
 

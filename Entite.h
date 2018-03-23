@@ -11,6 +11,7 @@ class Entite
 {
     friend class Card;
     friend void afficher_ennemis(std::vector<Entite*> ennemi);
+    friend void afficherjoueur(Entite joueur);
 public:
     Entite(int _pointsDeVie=100, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Zombie");
     void statistiques() const;

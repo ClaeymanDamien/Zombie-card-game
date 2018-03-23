@@ -18,6 +18,7 @@ int main()
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite*> ennemis,poolennemis;
     Entite player;
+    Entite zombie;
     srand (time(NULL));
     //int mana,tour;
 
@@ -43,12 +44,12 @@ int main()
     // Pool de cartes
     Lancepierre *chx1 = new Lancepierre;
     Medkit *chx2 = new Medkit;
-    Grenade *chx3 = new Grenade;
+//    Grenade *chx3 = new Grenade;
     Bouclier *chx4 = new Bouclier;
     Steroide *chx5 = new Steroide;
     poolcartes.push_back(chx1);
     poolcartes.push_back(chx2);
-    poolcartes.push_back(chx3);
+    //poolcartes.push_back(chx3);
     poolcartes.push_back(chx4);
     poolcartes.push_back(chx5);
 
@@ -57,10 +58,9 @@ int main()
         Entite *enmy1=new Entite;
         ennemis.push_back(enmy1);
     }
-
-//    deck[1]->effect(player,ennemis[0],ennemis);
-
-    gameloop(ennemis,deck,main,defausse,poolcartes,choixcarte);
-
+    // Test du polymorphisme
+    //deck[1]->effect(player,ennemis[1],ennemis);
+    //afficherjoueur(player);
+    gameloop(player,ennemis,deck,main,defausse,poolcartes,choixcarte);
     return 0;
 }
