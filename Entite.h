@@ -15,7 +15,7 @@ class Entite
     friend void lose(Entite &player);
     friend void ennemy_die (vector<Entite *> &ennemis);
 public:
-    Entite(int _pointsDeVie=10, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Zombie");
+    Entite(int _pointsDeVie=10, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Zombie", int _empoisonnement=0);
     void statistiques() const;
     void prendreDegats(int pointsDeDegats);
     void bouclier();
@@ -30,6 +30,7 @@ protected:
     int m_pointsDeDegats;
     int m_resistance;
     int m_strength;
+    int m_empoisonnement;
 };
 
 #endif // ENTITE_H_INCLUDED

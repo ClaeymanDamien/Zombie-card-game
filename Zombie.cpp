@@ -11,17 +11,19 @@ Zombie::Zombie() : Entite()
 
 }
 
-void Zombie::morsure(Entite &cible)
+void Zombie::morsure(Entite &target)
 {
-    cible.prendreDegats(60);
+    target.prendreDegats(6);
+    cout << "Vous vous etes fait mordre légèrement." << endl;
 }
 
-void Zombie::furie(Entite &cible)
+void Zombie::furie(Entite &target)
 {
     int nombreDeCoups = (rand() % 5) + 1;
 
     for(int i = 0; i < nombreDeCoups; i++)
     {
-        cible.prendreDegats(18);
+        target.prendreDegats(2);
     }
+    cout << "Vous avez subis une ruade." << endl;
 }

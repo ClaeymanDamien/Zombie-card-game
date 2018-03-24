@@ -7,42 +7,155 @@
 
 using namespace std;
 
-Infecte::Infecte() : Zombie()
+Infecte::Infecte(int pointsDeVie, std::string id) : Zombie()
 {
+    m_pointsDeVie = pointsDeVie;
+    m_id = id;
+}
+
+Infecte::~Infecte() {}
+
+void Infecte::horde(Entite &cible)
+{
+    // horde : l'infecté a 1 chance sur 4 de faire apparaître une autre entité en renfort.
 
 }
 
-void Infecte::horde(Entite &cible) // 1/4 de faire spawn un autre infecté
+void Infecte::attaque(Entite &target)
 {
+    int choix = (rand() % 3) + 1;
 
+    if(choix == 1)
+    {
+        morsure(target);
+    }
+    else if(choix == 2)
+    {
+        furie(target);
+    }
+    else
+    {
+        horde(target);
+    }
 }
 
-Brute::Brute() : Zombie()
-{
+/*//////////////////////////////////////////////////////////////////////*/
 
+Brute::Brute(int pointsDeVie, std::string id) : Zombie()
+{
+    m_pointsDeVie = pointsDeVie;
+    m_id = id;
 }
 
-void Brute::charge(Entite &cible) // plaque violement
+Brute::~Brute() {}
+
+void Brute::charge(Entite &target)
 {
-    cible.prendreDegats(85);
+    // charge : la brute plaque violemment le joueur
+    target.prendreDegats(9);
 }
 
-Contagieux::Contagieux() : Zombie()
+void Brute::attaque(Entite &target)
 {
+    int choix = (rand() % 3) + 1;
 
+    if(choix == 1)
+    {
+        morsure(target);
+    }
+    else if(choix == 2)
+    {
+        furie(target);
+    }
+    else
+    {
+        charge(target);
+    }
 }
 
-void Contagieux::empoisonnement(Entite &cible)
-{
+/*//////////////////////////////////////////////////////////////////////*/
 
+Contagieux::Contagieux(int pointsDeVie, std::string id) : Zombie()
+{
+    m_pointsDeVie = pointsDeVie;
+    m_id = id;
 }
 
-Exploseur::Exploseur() : Zombie()
-{
+Contagieux::~Contagieux() {}
 
+void Contagieux::empoisonnement(Entite &target)
+{
+    // empoisonnement : empoisonne la cible pendant 6 tours, celle-ci perd des points de vie à chaque tour
+    m_empoisonnement = 6;
 }
 
-void Exploseur::explosion(Entite &cible)
+void Contagieux::attaque(Entite &target)
 {
+    int choix = (rand() % 3) + 1;
 
+    if(choix == 1)
+    {
+        morsure(target);
+    }
+    else if(choix == 2)
+    {
+        furie(target);
+    }
+    else
+    {
+        empoisonnement(target);
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////////*/
+
+Exploseur::Exploseur(int pointsDeVie, std::string id) : Zombie()
+{
+    m_pointsDeVie = pointsDeVie;
+    m_id = id;
+}
+
+Exploseur::~Exploseur() {}
+
+void Exploseur::explosion(Entite &target)
+{
+    // explosion : le zombie se fait exploser, causant des dégâts variables
+    int tirage = (rand() % 3) + 1;
+
+    if(tirage == 1)
+    {
+        target.prendreDegats(10);
+        m_pointsDeVie = 0;
+        cout << "Le zombie a explosé ! Vous avez etes legerement blesse." << endl;
+    }
+    else if(tirage == 2)
+    {
+        target.prendreDegats(20);
+        m_pointsDeVie = 0;
+        cout << "Le zombie a explosé ! Vous avez ete moderement touche." << endl;
+    }
+    else
+    {
+        target.prendreDegats(30);
+        m_pointsDeVie = 0;
+        cout << "Le zombie a explosé ! Vous avez ete tres gravement touche." << endl;
+    }
+}
+
+void Exploseur::attaque(Entite &target)
+{
+    int choix = (rand() % 3) + 1;
+
+    if(choix == 1)
+    {
+        morsure(target);
+    }
+    else if(choix == 2)
+    {
+        furie(target);
+    }
+    else
+    {
+        explosion(target);
+    }
 }
