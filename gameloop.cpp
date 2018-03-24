@@ -20,13 +20,13 @@ void delay(float time_to_wait){
 
 void loading(){
     cout << endl ;
-    delay(0.5);
+    delay(0.4);
     cout << "." ;
-    delay(0.5);
+    delay(0.4);
     cout << "." ;
-    delay(0.5);
+    delay(0.4);
     cout << "." ;
-    delay(0.5);
+    delay(0.4);
 }
 
 void afficherjoueur(Entite joueur){
@@ -77,8 +77,8 @@ void clearconsole(){
 system("cls");
 }
 
-void lose(){
-
+void lose(Entite &player){
+    if (player.m_pointsDeVie <= 0) return ;
 }
 
 void draw(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main){
@@ -129,6 +129,18 @@ int prompt_card(int PA,vector<Card*> &main){
     return 0;
 }
 
+int prompt_card_choice(int PA,vector<Card*> &main){
+    int taille_main_max = main.size(),choix;
+    cin >> choix;
+    if (choix >= 0 && choix <= taille_main_max){
+        return choix-1;
+    } else {
+    cout << endl << "Choix invalide !" << endl;
+    prompt_card(PA, main);
+    }
+    return 0;
+}
+
 int prompt_entity(vector<Entite*> &ennemis){
     cout << endl << "Quelle va etre votre cible ?" << endl << "Votre choix: " ;
     int taille_ennemis_max = ennemis.size(),choix;
@@ -167,8 +179,19 @@ void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_ca
     }
 }
 
+void choix_nouvelle_carte(vector<Card*> &choice_of_cards, vector<Card*> &deck)
+{
+    cout << "Vous avez remporte ce combat, choisissez une recompense: " << endl << endl;
+    afficher(choice_of_cards);
+    move_card(prompt_card_choice(1,choice_of_cards),choice_of_cards,deck);
+    clearconsole();
+}
+
 void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &choice_of_ennemys){
-    for (int i = 0; i < 3; i++){
+
+    int nombre_alea = 1+rand()%4;
+
+    for (int i = 0; i < nombre_alea; i++){
         int tirage = rand()%pool_of_ennemys.size();
         move_entity(tirage,pool_of_ennemys,choice_of_ennemys);
     }
@@ -183,7 +206,7 @@ if(main[choix_carte]->target_type == 1){ // Attaque normale
 } else { // Buff car target_type == 0
     main[choix_carte]->effect(player,ennemis[0],ennemis);
 }
-
+ennemy_die(ennemis);
 PA = PA - main[choix_carte]->cost;
 move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 }
@@ -201,29 +224,29 @@ void ennemy_die (vector<Entite *> &ennemis){
             }
     }
 }
-
+/*
 void ennemy_phase (Entite &player, vector<Entite *> &ennemis){
     ennemys_attack(player,ennemis);
-    ennemy_die(ennemis);
 }
+*/
+
 // Gameloop finale
 
 void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards){
     int PA=3,choix_carte; //,nbr_tour;//,choix_ennemi;
 
-    int nbr_ennemis = ennemis.size();
-
+    size_t zero = 0;
 
         // Démarrage de la partie
 
         afficherui(player,ennemis,deck,main,defausse);
         loading();
-        create_card_choice(pool_of_cards,choice_of_cards);
         clearconsole();
 
         // Début de la boucle de jeu
 
-    while((nbr_ennemis =! 0)){
+
+    while(ennemis.size() != zero){
         PA = 3;
         draw_with_care(5,deck,main,defausse);
         while(PA > 0){
@@ -235,9 +258,7 @@ void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector
             loading();
             clearconsole();
                     }
-    ennemy_phase(player,ennemis);
+    ennemys_attack(player,ennemis);
     deck_to_another(main,defausse);
-    nbr_ennemis = ennemis.size();
-                                }
-
+        }
 }

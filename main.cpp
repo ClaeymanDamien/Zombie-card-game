@@ -16,7 +16,7 @@ int main()
 
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
-    vector<Entite*> ennemis,poolennemis;
+    vector<Entite*> ennemis,choixennemis,poolennemis;
     Entite player;
     Entite zombie;
     srand (time(NULL));
@@ -54,13 +54,17 @@ int main()
     poolcartes.push_back(chx5);
 
     // Ajout des ennemis
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 2; i++){
         Entite *enmy1=new Entite;
         ennemis.push_back(enmy1);
     }
-    // Test du polymorphisme
-    //deck[1]->effect(player,ennemis[1],ennemis);
-    //afficherjoueur(player);
-    gameloop(player,ennemis,deck,main,defausse,poolcartes,choixcarte);
+
+    while(1){
+    create_card_choice(poolcartes,choixcarte);
+    create_ennemy_choice(poolennemis,choixennemis);
+    gameloop(player,choixennemis,deck,main,defausse,poolcartes,choixcarte);
+    choix_nouvelle_carte(choixcarte,deck);
+    }
+    // Propose les cartes aux joueurs et il choisit
     return 0;
 }
