@@ -14,7 +14,7 @@ Zombie::Zombie() : Entite()
 void Zombie::morsure(Entite &target)
 {
     target.prendreDegats(6);
-    cout << "Vous vous etes fait mordre légèrement." << endl;
+    cout << "Le zombie vous a mordu ! Vous vous prenez 6 points de degats, mais par chance ca saigne pas." << endl;
 }
 
 void Zombie::furie(Entite &target)
@@ -25,5 +25,6 @@ void Zombie::furie(Entite &target)
     {
         target.prendreDegats(2);
     }
-    cout << "Vous avez subis une ruade." << endl;
+    cout << "Le zombie vous a retame, vous avez ete touche " << nombreDeCoups << " fois." << endl;
 }
+

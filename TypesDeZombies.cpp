@@ -18,7 +18,6 @@ Infecte::~Infecte() {}
 void Infecte::horde(Entite &cible)
 {
     // horde : l'infecté a 1 chance sur 4 de faire apparaître une autre entité en renfort.
-
 }
 
 void Infecte::attaque(Entite &target)
@@ -53,6 +52,7 @@ void Brute::charge(Entite &target)
 {
     // charge : la brute plaque violemment le joueur
     target.prendreDegats(9);
+    cout << "La brute vous fonce dessus et vous envoie valser ! Vous reussissez a vous relever mais vous vous etes pris 9 points de degats" << endl;
 }
 
 void Brute::attaque(Entite &target)
@@ -86,8 +86,8 @@ Contagieux::~Contagieux() {}
 void Contagieux::empoisonnement(Entite &target)
 {
     // empoisonnement : empoisonne la cible pendant 6 tours, celle-ci perd des points de vie à chaque tour
-    target.m_empoisonnement += 6;
-    cout << "Vous avez ete empoisonne de 6 points !" << endl;
+    m_empoisonnement = 6;
+    cout << "Le contagieux vous empoisonne avec un nuage toxique, vous etes intoxique ! Vous perdrez des points de vie à chaque tours." << endl;
 }
 
 void Contagieux::attaque(Entite &target)
@@ -127,19 +127,19 @@ void Exploseur::explosion(Entite &target)
     {
         target.prendreDegats(10);
         m_pointsDeVie = 0;
-        cout << "Le zombie a explosé ! Vous avez etes legerement blesse." << endl;
+        cout << "Le zombie a implosé ! Vous avez etes legerement blesse, vous perdez 10 points de vie." << endl;
     }
     else if(tirage == 2)
     {
         target.prendreDegats(20);
         m_pointsDeVie = 0;
-        cout << "Le zombie a explosé ! Vous avez ete moderement touche." << endl;
+        cout << "Le zombie a implosé ! Vous avez ete gravement touche, vous perdez 20 points de vie." << endl;
     }
     else
     {
         target.prendreDegats(30);
         m_pointsDeVie = 0;
-        cout << "Le zombie a explosé ! Vous avez ete tres gravement touche." << endl;
+        cout << "Le zombie a implosé ! Vous vous etes pris le souffle de l'explosion, vous perdez 30 points de vie." << endl;
     }
 }
 

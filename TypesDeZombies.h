@@ -17,7 +17,7 @@ public:
 class Brute : public Zombie
 {
 public:
-    Brute(int pointsDeVie = 30, std::string id = "Zombie brutale");
+    Brute(int pointsDeVie = 30, std::string id = "Zombie brutal");
     ~Brute();
     void charge(Entite &target);
     virtual void attaque(Entite &target);
@@ -43,4 +43,5 @@ public:
 
 
 #endif // TYPESDEZOMBIES_H_INCLUDED
+
 

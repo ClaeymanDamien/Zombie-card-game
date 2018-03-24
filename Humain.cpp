@@ -32,12 +32,15 @@ Medecin::Medecin(int _pointsDeVie, int _resistance, int _pointsDeDegats, int _st
 void Soldat::mortier(Entite &target) //Attaque mortier causant des dégats à la cible (entree en paramètre)
 {
     target.prendreDegats(9);
+    cout << "Surveillez mieux le ciel, le mortier vous a touché et vous fait perdre 9 points de vie" << endl;
 }
 
 void Soldat::lanceRoquette(Entite &target) //Attaque lanceRoquette causant des dégats à la cible (entree en paramètre)
 {
 
     target.prendreDegats(13);
+    cout << "Hou, le lance-roquette est passé tout pret de votre position, vous n'avez presque rien mais vous perdez 13 points de vie" << endl;
+
 }
 
 // methode permettant de choisir aléatoirement l'attaque d'un soldat
@@ -65,12 +68,14 @@ void Soldat::attaque(Entite &target){
 void Medecin::lanceSeringue(Entite &target){
 
     target.prendreDegats(7);
+    cout << "Ce medecin est fou, il vous a lancé des seringues contamines! Vous etes legerement blesse et vous perdez 7 points de vie" << endl;
 
 }
 
 void Medecin::lanceStethoscope(Entite &target){
 
     target.prendreDegats(11);
+    cout << "Ce medecin fou, il vous a carrement lancé son stéthoscope dans vos yeux! Vous etes  blesse et vous perdez 9 points de vie" << endl;
 }
 
 
@@ -82,7 +87,10 @@ void Medecin::injection()
     {
         m_pointsDeVie = 100;
     }
+
+    cout << "La medecine peut sauver des vie, vous gagnez 15 points de vie" << endl;
 }
+
 
 
 
