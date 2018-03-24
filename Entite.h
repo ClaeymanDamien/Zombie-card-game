@@ -10,6 +10,7 @@ class gameloop;
 class Entite
 {
     friend class Card;
+    friend class Contagieux;
     friend void afficher_ennemis(std::vector<Entite*> ennemi);
     friend void afficherjoueur(Entite joueur);
     friend void lose(Entite &player);
