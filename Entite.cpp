@@ -13,6 +13,11 @@ Entite::Entite(int _pointsDeVie, int _resistance, int _pointsDeDegats, int _stre
     m_empoisonnement = _empoisonnement;
 }
 
+void Entite::attaque(Entite &target)
+{
+
+}
+
 void Entite::statistiques() const
 {
     cout << "PV : " << m_pointsDeVie << " R : " << m_resistance << " F : " << m_strength  <<endl;

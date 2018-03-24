@@ -8,6 +8,7 @@
 #include "time.h"
 #include "Humain.h"
 #include "Zombie.h"
+#include "TypesDeZombies.h"
 
 using namespace std;
 
@@ -17,10 +18,9 @@ int main()
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite*> ennemis,choixennemis,poolennemis;
-    Entite player;
-    Entite zombie;
+    Entite player(70,0,0);
+
     srand (time(NULL));
-    //int mana,tour;
 
     // Deck de base
     for (int i = 0; i < 5; i++){
@@ -36,10 +36,16 @@ int main()
     poolennemis.push_back(enmy1);
     Entite *enmy2 = new Soldat;
     poolennemis.push_back(enmy2);
-    Entite *enmy3 = new Medecin;
+    Entite *enmy3 = new Infecte;
     poolennemis.push_back(enmy3);
-    Entite *enmy4 = new Soldat;
+    Entite *enmy4 = new Brute;
     poolennemis.push_back(enmy4);
+    Entite *enmy5 = new Contagieux;
+    poolennemis.push_back(enmy5);
+    Entite *enmy6 = new Brute;
+    poolennemis.push_back(enmy6);
+    Entite *enmy7 = new Exploseur;
+    poolennemis.push_back(enmy7);
 
     // Pool de cartes
     Lancepierre *chx1 = new Lancepierre;

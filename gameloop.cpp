@@ -30,7 +30,7 @@ void loading(){
 }
 
 void afficherjoueur(Entite joueur){
-    cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie << " Res: " << joueur.m_resistance << " Puiss: " << joueur.m_strength << endl;
+    cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie << " Res: " << joueur.m_resistance << " Puiss: " << joueur.m_strength << " Poison: " << joueur.m_empoisonnement << endl;
     cout << "___________________________________________________________" << endl;
 }
 
@@ -78,7 +78,11 @@ system("cls");
 }
 
 void lose(Entite &player){
-    if (player.m_pointsDeVie <= 0) return ;
+    if (player.m_pointsDeVie <= 0){
+
+        cout << "Vous avez succombe ... Nous nous reverrons en enfer !" << endl << endl;
+        exit(EXIT_FAILURE);
+    }
 }
 
 void draw(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main){
@@ -213,7 +217,7 @@ move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 
 void ennemys_attack (Entite &player, vector<Entite *> &ennemis){
     for (unsigned int i = 0; i < ennemis.size() ; i++){
-        //ennemis[i].attaque(player);
+        ennemis[i]->attaque(player);
     }
 }
 
@@ -245,7 +249,6 @@ void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector
 
         // Début de la boucle de jeu
 
-
     while(ennemis.size() != zero){
         PA = 3;
         draw_with_care(5,deck,main,defausse);
@@ -259,6 +262,18 @@ void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector
             clearconsole();
                     }
     ennemys_attack(player,ennemis);
+    lose(player);
     deck_to_another(main,defausse);
+
+    // On prend en compte l'empoisonnement du player
+    if ( player.m_empoisonnement){
+    player.m_pointsDeVie = player.m_pointsDeVie - player.m_empoisonnement;
+    player.m_empoisonnement--;
+    }
         }
+
+    // On remet à 0 les statistiques du player
+    player.m_empoisonnement = 0;
+    player.m_resistance = 0;
+    player.m_strength = 0;
 }
