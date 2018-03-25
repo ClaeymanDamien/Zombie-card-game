@@ -10,7 +10,6 @@ class gameloop;
 
 class Card
 {
-
     friend class Entite;
     friend void afficher(std::vector<Card*> main);
     friend void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse);
@@ -30,12 +29,12 @@ public:
     Card(std::string _id = "Inconnue", std::string _description = "Pas de description", int _cost = 1);
     virtual ~Card();
     int nbr_random(int min_nbr, int max_nbr) const;
+    void message_delay(float nbr);
     void target_entity(Entite &cible);
     void play_card(bool _played);
     void add_life(int value, Entite &target) const;
     void pull_life(int value, Entite &attacker, Entite *defender) const;
     void add_resistance(int value, Entite &target) const;
-//void damage_zone(int value, Entite attacker, std::vector<Entite*> &defenders) const;
     void add_strength(int value, Entite &target)const;
     virtual void effect(Entite &attacker, Entite *defender) const;
 
@@ -101,4 +100,25 @@ public:
     virtual void effect(Entite &attacker, Entite *defender) const;
     virtual ~Matraque();
 };
+
+class Poison :public Card
+{
+private:
+    int dommage;
+public:
+    Poison(std::string _id = "Poison", std::string _description = "Inflige 6 degats et -1 a chaque tour", int _cost = 2, int _dommage = 6, int _target_type = 1);
+    virtual void effect(Entite &attacker, Entite *defender) const;
+    virtual ~Poison();
+};
+class Acide :public Card
+{
+private:
+    int dommage;
+    int poison;
+public:
+    Acide(std::string _id = "Acide", std::string _description = "Inflige 20 degats mais tu attrapes 3 d'empoisonnement", int _cost = 2, int _dommage = 20, int _poison = 3, int _target_type = 1);
+    virtual void effect(Entite &attacker, Entite *defender) const;
+    virtual ~Acide();
+};
+
 #endif // CARD_H_INCLUDED

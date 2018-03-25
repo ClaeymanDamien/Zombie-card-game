@@ -127,19 +127,19 @@ void Exploseur::explosion(Entite &target)
     {
         target.prendreDegats(10);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implosé ! Vous avez etes legerement blesse, vous perdez 10 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous avez etes legerement blesse, vous perdez 10 points de vie." << endl;
     }
     else if(tirage == 2)
     {
         target.prendreDegats(20);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implosé ! Vous avez ete gravement touche, vous perdez 20 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous avez ete gravement touche, vous perdez 20 points de vie." << endl;
     }
     else
     {
         target.prendreDegats(30);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implosé ! Vous vous etes pris le souffle de l'explosion, vous perdez 30 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous vous etes pris le souffle de l'explosion, vous perdez 30 points de vie." << endl;
     }
 }
 

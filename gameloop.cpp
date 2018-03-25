@@ -104,7 +104,7 @@ void afficherui(Entite player,vector<Entite*> &ennemis,vector<Card*> &deck,vecto
     afficherjoueur(player);
     cout <<endl<<"- Ennemis: "<< endl;
     afficher_ennemis(ennemis);
-    cout <<endl<<"- Deck: "<< main.size() << " cartes" << endl;
+    cout <<endl<<"- Deck: "<< deck.size() << " cartes" << endl;
     cout <<endl<<"- Defausse: "<< defausse.size() << " cartes" << endl;
     //afficher(deck);
     cout <<endl<<"- Main: "<< endl;
@@ -322,9 +322,14 @@ void ennemys_attack (Entite &player, vector<Entite *> &ennemis)
     {
         ennemis[i]->attaque(player);
         if (ennemis[i]->m_empoisonnement){
-            ennemis[i]->m_pointsDeVie = ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement;
-            ennemis[i]->m_empoisonnement--;
-
+            if (ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement > 0){
+                ennemis[i]->m_pointsDeVie = ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement;
+                cout << "L'ennemi " << i+1 << " a perdu " << ennemis[i]->m_empoisonnement << " point(s) de vie" << endl;
+                ennemis[i]->m_empoisonnement--;
+            }else{
+                ennemis[i]->m_pointsDeVie = 0;
+                ennemis[i]->m_empoisonnement = 0;
+            }
         }
     }
 }

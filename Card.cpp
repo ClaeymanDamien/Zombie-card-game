@@ -22,6 +22,7 @@ Card::~Card()
 
 }
 
+
 int Card::nbr_random(int min_nbr, int max_nbr) const
 {
     srand(time(NULL));
@@ -131,23 +132,7 @@ Medkit::~Medkit()
 {
 
 }
-/*
-void Grenade::effect(Entite &attacker, Entite &defender,vector<Entite*> &ennemis) const {
-    damage_zone(dommage, attacker, ennemis);
-}
 
-Grenade::Grenade(std::string _id, std::string _description, int _cost, int _dommage, int _target_type){
-    id = _id;
-    description = _description;
-    cost = _cost;
-    dommage = _dommage;
-    target_type = _target_type;
-}
-
-Grenade::~Grenade(){
-
-}
-*/
 void Steroide::effect(Entite &attacker, Entite *defender) const
 {
     add_strength(strength, attacker);
@@ -216,6 +201,49 @@ Matraque::Matraque(std::string _id, std::string _description, int _cost, int _do
 }
 
 Matraque::~Matraque()
+{
+
+}
+
+void Poison::effect(Entite &attacker, Entite *defender) const
+{
+    defender->m_empoisonnement = dommage;
+    cout << "L'ennemi est empoisonne" << endl;
+}
+
+Poison::Poison(std::string _id, std::string _description, int _cost, int _dommage, int _target_type)
+{
+    id = _id;
+    description = _description;
+    cost = _cost;
+    dommage = _dommage;
+    target_type = _target_type;
+}
+
+Poison::~Poison()
+{
+
+}
+
+void Acide::effect(Entite &attacker, Entite *defender) const
+{
+    pull_life(dommage,attacker,defender);
+    attacker.m_empoisonnement = 3;
+    cout << "L'ennemie est entrain de fondre ! Il perd:" << dommage << "points de vie mais tu es empoisonne" << endl;
+
+}
+
+Acide::Acide(std::string _id, std::string _description, int _cost, int _dommage, int _poison, int _target_type)
+{
+    id = _id;
+    description = _description;
+    cost = _cost;
+    dommage = _dommage;
+    target_type = _target_type;
+    poison = _poison;
+}
+
+Acide::~Acide()
 {
 
 }
