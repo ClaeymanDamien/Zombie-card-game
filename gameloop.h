@@ -15,6 +15,7 @@ void afficherui(Entite player,vector<Entite*> &ennemis,vector<Card*> &deck,vecto
 void afficher_ennemis(vector<Entite*> ennemi);
 void clearconsole();
 void loading();
+void init_game(Entite &player,vector<Entite*> &ennemis,vector<Entite*> &poolennemis, vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &poolcartes,vector<Card*> &choice_of_cards);
 void afficherjoueur(Entite joueur);
 void afficher(vector<Card*> main);
 void draw(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main);

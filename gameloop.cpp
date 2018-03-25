@@ -1,6 +1,9 @@
 #include "Entite.h"
 #include "Card.h"
 #include "gameloop.h"
+#include "Humain.h"
+#include "Zombie.h"
+#include "TypesDeZombies.h"
 #include <iostream>
 #include <algorithm> // std::move (ranges)
 #include <utility> // std::move (objects)
@@ -31,6 +34,48 @@ void loading()
     delay(0.4);
 }
 
+void init_game(Entite &player,vector<Entite*> &ennemis, vector<Entite*> &poolennemis, vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &poolcartes, vector<Card*> &choice_of_cards){
+    // Deck de base
+    for (int i = 0; i < 5; i++){
+        Lancepierre *lcp1=new Lancepierre;
+        Bouclier *bcl1=new Bouclier;
+        deck.push_back(lcp1);
+        deck.push_back(bcl1);
+    }
+
+    // Pool d'ennemis
+
+    Entite *enmy1 = new Medecin;
+    poolennemis.push_back(enmy1);
+    Entite *enmy2 = new Soldat;
+    poolennemis.push_back(enmy2);
+    Entite *enmy3 = new Infecte;
+    poolennemis.push_back(enmy3);
+    Entite *enmy4 = new Brute;
+    poolennemis.push_back(enmy4);
+    Entite *enmy5 = new Contagieux;
+    poolennemis.push_back(enmy5);
+    Entite *enmy6 = new Brute;
+    poolennemis.push_back(enmy6);
+    Entite *enmy7 = new Exploseur;
+    poolennemis.push_back(enmy7);
+
+    // Pool de cartes
+    Lancepierre *chx1 = new Lancepierre;
+    Medkit *chx2 = new Medkit;
+    Bouclier *chx3 = new Bouclier;
+    Steroide *chx4 = new Steroide;
+    Sniper *chx5 = new Sniper;
+    Matraque *chx6 = new Matraque;
+    poolcartes.push_back(chx1);
+    poolcartes.push_back(chx2);
+    poolcartes.push_back(chx3);
+    poolcartes.push_back(chx4);
+    poolcartes.push_back(chx5);
+    poolcartes.push_back(chx6);
+
+
+}
 void afficherjoueur(Entite joueur)
 {
     cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie << " Res: " << joueur.m_resistance << " Puiss: " << joueur.m_strength << " Poison: " << joueur.m_empoisonnement << endl;
