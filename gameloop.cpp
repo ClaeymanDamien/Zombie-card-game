@@ -256,15 +256,15 @@ void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennem
 
     if(main[choix_carte]->target_type == 1)  // Attaque normale
     {
-        main[choix_carte]->effect(player,ennemis[prompt_entity(ennemis)],ennemis);
+        main[choix_carte]->effect(player,ennemis[prompt_entity(ennemis)]);
     }
     else if(main[choix_carte]->target_type == 2)     // AOE
     {
-        main[choix_carte]->effect(player,ennemis[0],ennemis);
+        main[choix_carte]->effect(player,ennemis[0]);
     }
     else     // Buff car target_type == 0
     {
-        main[choix_carte]->effect(player,ennemis[0],ennemis);
+        main[choix_carte]->effect(player,ennemis[0]);
     }
     ennemy_die(ennemis);
     PA = PA - main[choix_carte]->cost;
