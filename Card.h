@@ -91,9 +91,17 @@ class Sniper :public Card{
 private:
     int dommage;
 public:
-    Sniper(std::string _id = "Sniper", std::string _description = "Un fusil une puissance devastatrice mais vous n'avez pas l'expérience pour réussir à coup sûr le tir. 2/3 chance de faire 13 dégâts", int _cost = 1, int _dommage = 13, int _target_type = 1);
+    Sniper(std::string _id = "Sniper", std::string _description = "Un fusil une puissance devastatrice mais vous n'avez pas l'expérience pour réussir à coup sur le tir. 2/3 chance de faire 13 degat", int _cost = 1, int _dommage = 13, int _target_type = 1);
     virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Sniper();
 };
 
+class Matraque :public Card{
+private:
+    int dommage;
+public:
+    Matraque(std::string _id = "Matraque", std::string _description = "Inflige 6 couts de matraque, elle s'avere redoutable avec un plein de Steroide: 1 de degat par coup", int _cost = 1, int _dommage = 1, int _target_type = 1);
+    virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
+    virtual ~Matraque();
+};
 #endif // CARD_H_INCLUDED

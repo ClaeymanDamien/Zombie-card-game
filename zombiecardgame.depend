@@ -13,7 +13,7 @@
 	<vector>
 	<time.h>
 
-1521984730 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
+1521987611 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
 	<iostream>
 	<string>
 	"gameloop.h"
@@ -24,6 +24,7 @@
 	"time.h"
 	"Humain.h"
 	"Zombie.h"
+	"TypesDeZombies.h"
 
 1521984884 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
 	"Entite.h"
@@ -34,7 +35,7 @@
 	<string>
 	<vector>
 
-1521984666 source:c:\users\dclae\documents\github\zombie-card-game\card.cpp
+1521987799 source:c:\users\dclae\documents\github\zombie-card-game\card.cpp
 	<iostream>
 	<algorithm>
 	<utility>
@@ -44,7 +45,7 @@
 	"Card.h"
 	"Entite.h"
 
-1521984521 c:\users\dclae\documents\github\zombie-card-game\card.h
+1521985918 c:\users\dclae\documents\github\zombie-card-game\card.h
 	<string>
 	<vector>
 
@@ -318,7 +319,7 @@
 	<string>
 	"Entite.h"
 
-1521918960 source:c:\users\dclae\documents\github\zombie-card-game\typesdezombies.cpp
+1521984884 source:c:\users\dclae\documents\github\zombie-card-game\typesdezombies.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -326,13 +327,13 @@
 	"Zombie.h"
 	"TypesDeZombies.h"
 
-1521918960 c:\users\dclae\documents\github\zombie-card-game\typesdezombies.h
+1521984884 c:\users\dclae\documents\github\zombie-card-game\typesdezombies.h
 	<iostream>
 	<string>
 	"Entite.h"
 	"Zombie.h"
 
-1521918960 source:c:\users\dclae\documents\github\zombie-card-game\zombie.cpp
+1521984884 source:c:\users\dclae\documents\github\zombie-card-game\zombie.cpp
 	<iostream>
 	<string>
 	<cstdlib>
