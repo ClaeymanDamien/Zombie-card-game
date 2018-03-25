@@ -97,7 +97,7 @@ class Matraque :public Card
 private:
     int dommage;
 public:
-    Matraque(std::string _id = "Matraque", std::string _description = "Inflige 6 couts de matraque, elle s'avere redoutable avec un plein de Steroide: 1 de degat par coup", int _cost = 1, int _dommage = 1, int _target_type = 1);
+    Matraque(std::string _id = "Matraque", std::string _description = "Inflige 6 coups de matraques qui font 1 degat", int _cost = 1, int _dommage = 1, int _target_type = 1);
     virtual void effect(Entite &attacker, Entite *defender) const;
     virtual ~Matraque();
 };

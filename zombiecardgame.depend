@@ -70,7 +70,7 @@
 	"Card.h"
 	"Entite.h"
 
-1521990692 c:\users\emrick\documents\github\zombie-card-game\card.h
+1521991483 c:\users\emrick\documents\github\zombie-card-game\card.h
 	<string>
 	<vector>
 
@@ -83,7 +83,7 @@
 	"Entite.h"
 	<iostream>
 
-1521991244 source:c:\users\emrick\documents\github\zombie-card-game\gameloop.cpp
+1521991261 source:c:\users\emrick\documents\github\zombie-card-game\gameloop.cpp
 	"Entite.h"
 	"Card.h"
 	"gameloop.h"
