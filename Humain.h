@@ -25,7 +25,7 @@ private:
 class Soldat : public Entite
 {
 public:
-     Soldat(int _pointsDeVie=15, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Soldat");
+     Soldat(int _pointsDeVie=12, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Soldat");
      void mortier(Entite &target); // target represente le personnage choisi
      void lanceRoquette(Entite &target);
      //void bouclier(Entite &target, int value);

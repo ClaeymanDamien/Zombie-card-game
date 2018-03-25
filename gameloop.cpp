@@ -255,7 +255,6 @@ void copy_card(int choix_carte, vector<Card*> &deck,vector<Card*> &anotherdeck)
 
 void move_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &anotherennemis)
 {
-
     anotherennemis.push_back(ennemis[choix_ennemi]); // Ajoute la carte du deck � la main
     ennemis.erase(ennemis.begin()+choix_ennemi); // Supprime la carte du deck
 }
@@ -286,12 +285,10 @@ void choix_nouvelle_carte(vector<Card*> &choice_of_cards, vector<Card*> &deck)
 
 void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &choice_of_ennemys)
 {
-
     int nombre_alea = 1+rand()%4;
-
     for (int i = 0; i < nombre_alea; i++)
     {
-        int tirage = rand()%pool_of_ennemys.size();
+        int tirage = rand() % pool_of_ennemys.size();
         move_entity(tirage,pool_of_ennemys,choice_of_ennemys);
     }
 }
@@ -321,7 +318,13 @@ void ennemys_attack (Entite &player, vector<Entite *> &ennemis)
     for (unsigned int i = 0; i < ennemis.size() ; i++)
     {
         ennemis[i]->attaque(player);
-        if (ennemis[i]->m_empoisonnement){
+    }
+}
+
+void ennemys_poisoning(vector<Entite *> &ennemis){
+    for (unsigned int i = 0; i < ennemis.size() ; i++)
+    {
+        if (ennemis[i]->m_empoisonnement>0){
             if (ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement > 0){
                 ennemis[i]->m_pointsDeVie = ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement;
                 cout << "L'ennemi " << i+1 << " a perdu " << ennemis[i]->m_empoisonnement << " point(s) de vie" << endl;
@@ -376,6 +379,7 @@ void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector
             clearconsole();
         }
         ennemys_attack(player,ennemis);
+        ennemys_poisoning(ennemis);
         lose(player);
         deck_to_another(main,defausse);
 

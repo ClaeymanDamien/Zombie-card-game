@@ -86,8 +86,8 @@ Contagieux::~Contagieux() {}
 void Contagieux::empoisonnement(Entite &target)
 {
     // empoisonnement : empoisonne la cible pendant 6 tours, celle-ci perd des points de vie à chaque tour
-    m_empoisonnement = 6;
-    cout << "Le contagieux vous empoisonne avec un nuage toxique, vous etes intoxique ! Vous perdrez des points de vie à chaque tours." << endl;
+    target.m_empoisonnement += 6;
+    cout << "Le contagieux vous empoisonne avec un nuage toxique, vous etes intoxique ! Vous perdrez des points de vie a chaque tour." << endl;
 }
 
 void Contagieux::attaque(Entite &target)

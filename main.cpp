@@ -32,6 +32,7 @@ int main()
     choix_nouvelle_carte(choixcarte,deck);
     empty_card_choice(choixcarte);
 
+
     }
     // Propose les cartes aux joueurs et il choisit
 

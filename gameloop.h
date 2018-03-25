@@ -33,6 +33,7 @@ void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennem
 void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &choice_of_ennemys);
 void empty_card_choice(vector<Card*> &choice_of_cards);
 void ennemys_attack (Entite &player, vector<Entite *> &ennemis);
+void ennemys_poisoning(vector<Entite *> &ennemis);
 void ennemy_die (vector<Entite *> &ennemis);
 void ennemy_phase (Entite &player, vector<Entite *> &ennemis);
 void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards);

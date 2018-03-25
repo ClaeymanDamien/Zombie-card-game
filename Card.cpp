@@ -210,7 +210,7 @@ Matraque::~Matraque()
 
 void Poison::effect(Entite &attacker, Entite *defender) const
 {
-    defender->m_empoisonnement = dommage;
+    defender->m_empoisonnement += dommage;
     cout << "L'ennemi est empoisonne" << endl;
 }
 
@@ -231,7 +231,7 @@ Poison::~Poison()
 void Acide::effect(Entite &attacker, Entite *defender) const
 {
     pull_life(dommage,attacker,defender);
-    attacker.m_empoisonnement = 3;
+    attacker.m_empoisonnement += poison;
     cout << "L'ennemie est entrain de fondre ! Il perd:" << dommage << "points de vie mais tu es empoisonne" << endl;
 
 }

@@ -79,7 +79,7 @@ void Medecin::lanceStethoscope(Entite &target){
 
 void Medecin::injection()
 {
-    m_pointsDeVie += 15;
+    m_pointsDeVie += 3;
 
     if(m_pointsDeVie > 100) //Sécurisation pour que le PV personnage <= 100
     {
