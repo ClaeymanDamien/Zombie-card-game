@@ -28,6 +28,7 @@ public:
 
 Card(std::string _id = "Inconnue", std::string _description = "Pas de description", int _cost = 1);
 virtual ~Card();
+int nbr_random(int min_nbr, int max_nbr) const;
 void target_entity(Entite &cible);
 void play_card(bool _played);
 void add_life(int value, Entite &target) const;
@@ -86,5 +87,13 @@ public:
     virtual ~Steroide();
 };
 
+class Sniper :public Card{
+private:
+    int dommage;
+public:
+    Sniper(std::string _id = "Sniper", std::string _description = "Un fusil une puissance devastatrice mais vous n'avez pas l'expérience pour réussir à coup sûr le tir. 2/3 chance de faire 13 dégâts", int _cost = 1, int _dommage = 13, int _target_type = 1);
+    virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
+    virtual ~Sniper();
+};
 
 #endif // CARD_H_INCLUDED

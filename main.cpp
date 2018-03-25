@@ -58,6 +58,7 @@ int main()
         Entite *enmy1=new Entite;
         ennemis.push_back(enmy1);
     }
+
     // Test du polymorphisme
     //deck[1]->effect(player,ennemis[1],ennemis);
     //afficherjoueur(player);

@@ -1,7 +1,13 @@
 #include <iostream>
+#include <algorithm> // std::move (ranges)
+#include <utility> // std::move (objects)
 #include <string>
+#include <vector> // std
+#include <time.h>
 #include "Card.h"
 #include "Entite.h"
+
+
 using namespace std;
 
 Card::Card(std::string _id, std::string _description, int _cost){
@@ -13,6 +19,13 @@ Card::Card(std::string _id, std::string _description, int _cost){
 Card::~Card(){
 
 }
+
+int Card::nbr_random(int min_nbr, int max_nbr) const{
+    srand(time(NULL));
+    return (rand() % (max_nbr - min_nbr + 1)) + min_nbr;
+}
+
+
 void Card::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
 {
 
@@ -131,5 +144,26 @@ Steroide::Steroide(std::string _id, std::string _description, int _cost, int _st
 }
 
 Steroide::~Steroide(){
+
+}
+
+void Sniper::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const {
+    if (nbr_random(0,2)<2){
+        pull_life(dommage,attacker,defender);
+        cout << "Headshot ! Tu viens de retirer 13 points" << endl;
+    }else{
+        cout << "Tu as manque ta cible" << endl;
+    }
+}
+
+Sniper::Sniper(std::string _id, std::string _description, int _cost, int _dommage, int _target_type){
+    id = _id;
+    description = _description;
+    cost = _cost;
+    dommage = _dommage;
+    target_type = _target_type;
+}
+
+Sniper::~Sniper(){
 
 }
