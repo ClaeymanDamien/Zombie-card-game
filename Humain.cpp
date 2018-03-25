@@ -27,8 +27,6 @@ Medecin::Medecin(int _pointsDeVie, int _resistance, int _pointsDeDegats, int _st
 
 // LES METHODES DE LA CLASSE SOLDAT
 
-
-
 void Soldat::mortier(Entite &target) //Attaque mortier causant des dégats à la cible (entree en paramètre)
 {
     target.prendreDegats(9);
@@ -68,7 +66,7 @@ void Soldat::attaque(Entite &target){
 void Medecin::lanceSeringue(Entite &target){
 
     target.prendreDegats(7);
-    cout << "Ce medecin est fou, il vous a lancé des seringues contamines! Vous etes legerement blesse et vous perdez 7 points de vie" << endl;
+    cout << "Ce medecin est fou, il vous a lancé des seringues contaminees! Vous etes legerement blesse et vous perdez 7 points de vie" << endl;
 
 }
 

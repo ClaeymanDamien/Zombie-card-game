@@ -45,7 +45,7 @@ class Lancepierre :public Card{
 private:
     int dommage;
 public:
-Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Lance des cailloux aigises dans la gueule des zombies", int _cost = 1, int _dommage = 6, int _target_type = 1);
+Lancepierre(std::string _id = "Lance Pierre", std::string _description = "Inflige 6 points de degats a un ennemi", int _cost = 1, int _dommage = 6, int _target_type = 1);
 virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
 virtual ~Lancepierre();
 
@@ -55,7 +55,7 @@ class Bouclier :public Card{
 private:
     int resistance;
 public:
-    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "C'est une plaque abdominale de protection. Cela permet +1 de resistance", int _cost = 1, int _resistance = 1, int _target_type = 0);
+    Bouclier(std::string _id = "Bouclier Shield Donadey", std::string _description = "Rajoutez-vous +1 de resistance ", int _cost = 1, int _resistance = 1, int _target_type = 0);
     virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Bouclier();
 };
@@ -64,7 +64,7 @@ class Medkit :public Card{
 private:
     int life;
 public:
-    Medkit(std::string _id = "Medkit", std::string _description = "C'est de la poudre de Perlimpinpin permettra. +4 points de vie", int _cost = 1, int _life = 4, int _target_type = 0);
+    Medkit(std::string _id = "Medkit", std::string _description = "Soignez vous de 8 points de vie", int _cost = 1, int _life = 8, int _target_type = 0);
     virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Medkit();
 };
@@ -82,7 +82,7 @@ class Steroide :public Card{
 private:
     int strength;
 public:
-    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre de la masse. +1 de force", int _cost = 1, int _strength = 1, int _target_type = 0);
+    Steroide(std::string _id = "Steroidam", std::string _description = "Coach Damien de la salle te fait prendre +1 de force", int _cost = 1, int _strength = 1, int _target_type = 0);
     virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Steroide();
 };
@@ -91,7 +91,7 @@ class Sniper :public Card{
 private:
     int dommage;
 public:
-    Sniper(std::string _id = "Sniper", std::string _description = "Un fusil une puissance devastatrice mais vous n'avez pas l'expérience pour réussir à coup sûr le tir. 2/3 chance de faire 13 dégâts", int _cost = 1, int _dommage = 13, int _target_type = 1);
+    Sniper(std::string _id = "Sniper", std::string _description = "Vous avez 66% chance de faire 13 degats à un ennemi", int _cost = 1, int _dommage = 13, int _target_type = 1);
     virtual void effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const;
     virtual ~Sniper();
 };

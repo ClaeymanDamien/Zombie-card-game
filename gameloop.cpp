@@ -59,12 +59,13 @@ void afficherui(Entite player,vector<Entite*> &ennemis,vector<Card*> &deck,vecto
     afficherjoueur(player);
     cout <<endl<<"- Ennemis: "<< endl;
     afficher_ennemis(ennemis);
-    cout <<endl<<"- Deck: "<< endl;
-    afficher(deck);
+    cout <<endl<<"- Deck: "<< main.size() << " cartes" << endl;
+    cout <<endl<<"- Defausse: "<< defausse.size() << " cartes" << endl;
+    //afficher(deck);
     cout <<endl<<"- Main: "<< endl;
     afficher(main);
-    cout <<endl<<"- Defausse: "<< endl;
-    afficher(defausse);
+
+    //afficher(defausse);
 }
 
 void if_deck_empty()
@@ -83,7 +84,7 @@ void afficher(vector<Card*> main)
     {
         for (unsigned int i = 0; i<main.size(); i++)
         {
-            cout << "- " << i+1 << " | Cout: " << main[i]->cost << " " << main[i]->id <<endl;
+            cout << "- " << i+1 << " | Cout: " << main[i]->cost << " " << main[i]->id << " | " << main[i]->description << endl;
         }
     }
 }
@@ -223,6 +224,13 @@ void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_ca
     }
 }
 
+void empty_card_choice(vector<Card*> &choice_of_cards){
+    for (unsigned int i = 0; i < choice_of_cards.size(); i++)
+    {
+        choice_of_cards.erase(choice_of_cards.begin()+i);
+    }
+}
+
 void choix_nouvelle_carte(vector<Card*> &choice_of_cards, vector<Card*> &deck)
 {
     cout << "Vous avez remporte ce combat, choisissez une recompense: " << endl << endl;
@@ -268,6 +276,11 @@ void ennemys_attack (Entite &player, vector<Entite *> &ennemis)
     for (unsigned int i = 0; i < ennemis.size() ; i++)
     {
         ennemis[i]->attaque(player);
+        if (ennemis[i]->m_empoisonnement){
+            ennemis[i]->m_pointsDeVie = ennemis[i]->m_pointsDeVie - ennemis[i]->m_empoisonnement;
+            ennemis[i]->m_empoisonnement--;
+
+        }
     }
 }
 

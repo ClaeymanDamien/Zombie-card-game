@@ -18,7 +18,7 @@ int main()
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
     vector<Entite*> ennemis,choixennemis,poolennemis;
-    Entite player(70,0,0);
+    Entite player(100,0,0); // Le joueur démarre avec 100HP
 
     srand (time(NULL));
 
@@ -50,14 +50,16 @@ int main()
     // Pool de cartes
     Lancepierre *chx1 = new Lancepierre;
     Medkit *chx2 = new Medkit;
-//    Grenade *chx3 = new Grenade;
     Bouclier *chx4 = new Bouclier;
     Steroide *chx5 = new Steroide;
     poolcartes.push_back(chx1);
     poolcartes.push_back(chx2);
-    //poolcartes.push_back(chx3);
     poolcartes.push_back(chx4);
     poolcartes.push_back(chx5);
+
+    // Prototype mis en pause
+    //Grenade *chx3 = new Grenade;
+    //poolcartes.push_back(chx3);
 
     // Ajout des ennemis
     for (int i = 0; i < 2; i++){
@@ -70,6 +72,8 @@ int main()
     create_ennemy_choice(poolennemis,choixennemis);
     gameloop(player,choixennemis,deck,main,defausse,poolcartes,choixcarte);
     choix_nouvelle_carte(choixcarte,deck);
+    empty_card_choice(choixcarte);
+
     }
     // Propose les cartes aux joueurs et il choisit
 

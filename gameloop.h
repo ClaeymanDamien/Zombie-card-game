@@ -30,6 +30,7 @@ void choix_nouvelle_carte(vector<Card*> &choice_of_cards, vector<Card*> &deck);
 void move_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &anotherennemis);
 void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse);
 void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &choice_of_ennemys);
+void empty_card_choice(vector<Card*> &choice_of_cards);
 void ennemys_attack (Entite &player, vector<Entite *> &ennemis);
 void ennemy_die (vector<Entite *> &ennemis);
 void ennemy_phase (Entite &player, vector<Entite *> &ennemis);
