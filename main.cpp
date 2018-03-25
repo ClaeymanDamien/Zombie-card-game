@@ -8,6 +8,7 @@
 #include "time.h"
 #include "Humain.h"
 #include "Zombie.h"
+#include "TypesDeZombies.h"
 
 using namespace std;
 
@@ -16,11 +17,10 @@ int main()
 
 
     vector<Card*> deck, defausse, main, choixcarte,poolcartes;
-    vector<Entite*> ennemis,poolennemis;
-    Entite player;
-    Entite zombie;
+    vector<Entite*> ennemis,choixennemis,poolennemis;
+    Entite player(70,0,0);
+
     srand (time(NULL));
-    //int mana,tour;
 
     // Deck de base
     for (int i = 0; i < 5; i++){
@@ -36,10 +36,16 @@ int main()
     poolennemis.push_back(enmy1);
     Entite *enmy2 = new Soldat;
     poolennemis.push_back(enmy2);
-    Entite *enmy3 = new Medecin;
+    Entite *enmy3 = new Infecte;
     poolennemis.push_back(enmy3);
-    Entite *enmy4 = new Soldat;
+    Entite *enmy4 = new Brute;
     poolennemis.push_back(enmy4);
+    Entite *enmy5 = new Contagieux;
+    poolennemis.push_back(enmy5);
+    Entite *enmy6 = new Brute;
+    poolennemis.push_back(enmy6);
+    Entite *enmy7 = new Exploseur;
+    poolennemis.push_back(enmy7);
 
     // Pool de cartes
     Lancepierre *chx1 = new Lancepierre;
@@ -54,14 +60,18 @@ int main()
     poolcartes.push_back(chx5);
 
     // Ajout des ennemis
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 2; i++){
         Entite *enmy1=new Entite;
         ennemis.push_back(enmy1);
     }
 
-    // Test du polymorphisme
-    //deck[1]->effect(player,ennemis[1],ennemis);
-    //afficherjoueur(player);
-    gameloop(player,ennemis,deck,main,defausse,poolcartes,choixcarte);
+    while(1){
+    create_card_choice(poolcartes,choixcarte);
+    create_ennemy_choice(poolennemis,choixennemis);
+    gameloop(player,choixennemis,deck,main,defausse,poolcartes,choixcarte);
+    choix_nouvelle_carte(choixcarte,deck);
+    }
+    // Propose les cartes aux joueurs et il choisit
+
     return 0;
 }

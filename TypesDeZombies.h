@@ -8,30 +8,40 @@
 class Infecte : public Zombie
 {
 public:
-    Infecte();
-    void horde(Entite &cible);
+    Infecte(int pointsDeVie = 18, std::string id = "Zombie");
+    ~Infecte();
+    void horde(Entite &target);
+    virtual void attaque(Entite &target);
 };
 
 class Brute : public Zombie
 {
 public:
-    Brute();
-    void charge(Entite &cible);
+    Brute(int pointsDeVie = 30, std::string id = "Zombie brutal");
+    ~Brute();
+    void charge(Entite &target);
+    virtual void attaque(Entite &target);
 };
 
 class Contagieux : public Zombie
 {
 public:
-    Contagieux();
-    void empoisonnement(Entite &cible);
+    Contagieux(int pointsDeVie = 24, std::string id = "Zombie contagieux");
+    ~Contagieux();
+    void empoisonnement(Entite &target);
+    virtual void attaque(Entite &target);
 };
 
 class Exploseur : public Zombie
 {
 public:
-    Exploseur();
-    void explosion(Entite &cible);
+    Exploseur(int pointsDeVie = 24, std::string id = "Zombie explosif");
+    ~Exploseur();
+    void explosion(Entite &target);
+    virtual void attaque(Entite &target);
 };
 
 
 #endif // TYPESDEZOMBIES_H_INCLUDED
+
+
