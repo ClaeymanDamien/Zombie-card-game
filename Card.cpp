@@ -29,7 +29,7 @@ int Card::nbr_random(int min_nbr, int max_nbr) const
 }
 
 
-void Card::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Card::effect(Entite &attacker, Entite *defender) const
 {
 
 };
@@ -54,13 +54,6 @@ void Card::add_resistance(int value, Entite &target) const
     target.m_resistance += value;
 }
 
-/*
-void Card::damage_zone(int value, Entite attacker, std::vector<Entite*> &defenders) const{
-    for(unsigned int i=0; i<defenders.size(); i++){
-        pull_life(value,attacker,&defenders[i]);
-    }
-}
-*/
 void Card::add_strength(int value, Entite &target) const
 {
     target.m_strength += value;
@@ -80,7 +73,7 @@ void Card::play_card(bool _played)
     }
 }
 
-void Lancepierre::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Lancepierre::effect(Entite &attacker, Entite *defender) const
 {
     pull_life(dommage,attacker,defender);
 }
@@ -99,7 +92,7 @@ Lancepierre::~Lancepierre()
 
 }
 
-void Bouclier::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Bouclier::effect(Entite &attacker, Entite *defender) const
 {
     add_resistance(resistance,attacker);
 }
@@ -120,7 +113,7 @@ Bouclier::~Bouclier()
 
 }
 
-void Medkit::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Medkit::effect(Entite &attacker, Entite *defender) const
 {
     add_life(life,attacker);
 }
@@ -155,7 +148,7 @@ Grenade::~Grenade(){
 
 }
 */
-void Steroide::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Steroide::effect(Entite &attacker, Entite *defender) const
 {
     add_strength(strength, attacker);
 }
@@ -174,7 +167,7 @@ Steroide::~Steroide()
 
 }
 
-void Sniper::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Sniper::effect(Entite &attacker, Entite *defender) const
 {
     if (nbr_random(0,2)<2)
     {
@@ -201,7 +194,7 @@ Sniper::~Sniper()
 
 }
 
-void Matraque::effect(Entite &attacker, Entite *defender,vector<Entite*> &ennemis) const
+void Matraque::effect(Entite &attacker, Entite *defender) const
 {
     for(int i=0; i<6; i++)
     {
