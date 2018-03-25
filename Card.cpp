@@ -38,7 +38,6 @@ void Card::effect(Entite &attacker, Entite *defender) const
 void Card::add_life(int value,Entite &target) const
 {
     target.m_pointsDeVie += value;
-    cout << "Hou, ce petit boost va me faire du bien" << endl;
 }
 
 void Card::pull_life(int value, Entite &attacker, Entite *defender) const
@@ -48,20 +47,16 @@ void Card::pull_life(int value, Entite &attacker, Entite *defender) const
     }else{
         defender->m_pointsDeVie = 0;
     }
-    cout << "Aie ca fait mal" << endl;
 }
 
 void Card::add_resistance(int value, Entite &target) const
 {
     target.m_resistance += value;
-    cout << "Yes, un peu plus de resistance" << endl;
 }
 
 void Card::add_strength(int value, Entite &target) const
 {
     target.m_strength += value;
-    cout << "Cool, j'ai des gros bras" << endl;
-
 }
 
 
