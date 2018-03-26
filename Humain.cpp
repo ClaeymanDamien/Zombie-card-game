@@ -65,28 +65,28 @@ void Soldat::attaque(Entite &target){
 
 void Medecin::lanceSeringue(Entite &target){
 
-    target.prendreDegats(7);
-    cout << "Ce medecin est fou, il vous a lance des seringues contaminees! Vous etes legerement blesse et vous perdez 7 points de vie" << endl;
+    target.prendreDegats(4);
+    cout << "Ce medecin est fou, il vous a lance des seringues contaminees! Vous etes legerement blesse et vous perdez 4 points de vie" << endl;
 
 }
 
 void Medecin::lanceStethoscope(Entite &target){
 
-    target.prendreDegats(11);
-    cout << "Ce medecin fou, il vous a carrement lance son stethoscope dans vos yeux! Vous etes  blesse et vous perdez 9 points de vie" << endl;
+    target.prendreDegats(6);
+    cout << "Ce medecin fou, il vous a carrement lance son stethoscope dans vos yeux! Vous etes  blesse et vous perdez 6 points de vie" << endl;
 }
 
 
 void Medecin::injection()
 {
-    m_pointsDeVie += 3;
+    m_pointsDeVie += 6;
 
     if(m_pointsDeVie > 100) //Sécurisation pour que le PV personnage <= 100
     {
         m_pointsDeVie = 100;
     }
 
-    cout << "La medecine peut sauver des vie, il gagne 15 points de vie" << endl;
+    cout << "La medecine peut sauver des vie, il gagne 6 points de vie" << endl;
 }
 
 

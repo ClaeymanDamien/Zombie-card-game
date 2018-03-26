@@ -51,8 +51,8 @@ Brute::~Brute() {}
 void Brute::charge(Entite &target)
 {
     // charge : la brute plaque violemment le joueur
-    target.prendreDegats(9);
-    cout << "La brute vous fonce dessus et vous envoie valser ! Vous reussissez a vous relever mais vous vous etes pris 9 points de degats" << endl;
+    target.prendreDegats(7);
+    cout << "La brute vous fonce dessus et vous envoie valser ! Vous reussissez a vous relever mais vous vous etes pris 7 points de degats" << endl;
 }
 
 void Brute::attaque(Entite &target)
@@ -86,7 +86,7 @@ Contagieux::~Contagieux() {}
 void Contagieux::empoisonnement(Entite &target)
 {
     // empoisonnement : empoisonne la cible pendant 6 tours, celle-ci perd des points de vie à chaque tour
-    target.m_empoisonnement += 6;
+    target.m_empoisonnement += 4;
     cout << "Le contagieux vous empoisonne avec un nuage toxique, vous etes intoxique ! Vous perdrez des points de vie a chaque tour." << endl;
 }
 
@@ -125,21 +125,21 @@ void Exploseur::explosion(Entite &target)
 
     if(tirage == 1)
     {
-        target.prendreDegats(10);
+        target.prendreDegats(5);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implose ! Vous avez etes legerement blesse, vous perdez 10 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous avez etes legerement blesse, vous perdez 5 points de vie." << endl;
     }
     else if(tirage == 2)
     {
-        target.prendreDegats(20);
+        target.prendreDegats(15);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implose ! Vous avez ete gravement touche, vous perdez 20 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous avez ete gravement touche, vous perdez 15 points de vie." << endl;
     }
     else
     {
-        target.prendreDegats(30);
+        target.prendreDegats(20);
         m_pointsDeVie = 0;
-        cout << "Le zombie a implose ! Vous vous etes pris le souffle de l'explosion, vous perdez 30 points de vie." << endl;
+        cout << "Le zombie a implose ! Vous vous etes pris le souffle de l'explosion, vous perdez 20 points de vie." << endl;
     }
 }
 
