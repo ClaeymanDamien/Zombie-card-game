@@ -2,7 +2,7 @@
 1520871897 source:c:\users\dclae\documents\github\zombie-card-game\entity.cpp
 	<string>
 
-1522010622 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
+1522066646 source:c:\users\dclae\documents\github\zombie-card-game\gameloop.cpp
 	"Entite.h"
 	"Card.h"
 	"gameloop.h"
@@ -16,7 +16,7 @@
 	<vector>
 	<time.h>
 
-1522005223 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
+1522065222 source:c:\users\dclae\documents\github\zombie-card-game\main.cpp
 	<iostream>
 	<string>
 	"gameloop.h"
@@ -29,7 +29,7 @@
 	"Zombie.h"
 	"TypesDeZombies.h"
 
-1522005392 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
+1522065531 c:\users\dclae\documents\github\zombie-card-game\gameloop.h
 	"Entite.h"
 	"Card.h"
 	<iostream>
@@ -48,7 +48,7 @@
 	"Card.h"
 	"Entite.h"
 
-1522001619 c:\users\dclae\documents\github\zombie-card-game\card.h
+1522066283 c:\users\dclae\documents\github\zombie-card-game\card.h
 	<string>
 	<vector>
 

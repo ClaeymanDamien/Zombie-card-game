@@ -28,6 +28,7 @@ int main()
     while(1){
     create_card_choice(poolcartes,choixcarte);
     create_ennemy_choice(poolennemis,choixennemis);
+    reinit_ennemy_pool(poolennemis);
     gameloop(player,choixennemis,deck,main,defausse,poolcartes,choixcarte);
     choix_nouvelle_carte(choixcarte,deck);
     empty_card_choice(choixcarte);

@@ -67,12 +67,16 @@ void init_game(Entite &player,vector<Entite*> &ennemis, vector<Entite*> &poolenn
     Steroide *chx4 = new Steroide;
     Sniper *chx5 = new Sniper;
     Matraque *chx6 = new Matraque;
+    Poison *chx7 = new Poison;
+    Acide *chx8 = new Acide;
     poolcartes.push_back(chx1);
     poolcartes.push_back(chx2);
     poolcartes.push_back(chx3);
     poolcartes.push_back(chx4);
     poolcartes.push_back(chx5);
     poolcartes.push_back(chx6);
+    poolcartes.push_back(chx7);
+    poolcartes.push_back(chx8);
 
 
 }
@@ -259,6 +263,34 @@ void move_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &ano
     ennemis.erase(ennemis.begin()+choix_ennemi); // Supprime la carte du deck
 }
 
+void copy_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &anotherennemis)
+{
+    anotherennemis.push_back(ennemis[choix_ennemi]); // Ajoute la carte du deck � la main
+}
+
+void reinit_ennemy_pool(vector<Entite*> &pool_of_ennemis){
+    size_t size_pool = pool_of_ennemis.size();
+    for (unsigned int i=0; i<size_pool; i++){
+        pool_of_ennemis.erase(pool_of_ennemis.begin());
+    }
+
+    Entite *enmy1 = new Medecin;
+    pool_of_ennemis.push_back(enmy1);
+    Entite *enmy2 = new Soldat;
+    pool_of_ennemis.push_back(enmy2);
+    Entite *enmy3 = new Infecte;
+    pool_of_ennemis.push_back(enmy3);
+    Entite *enmy4 = new Brute;
+    pool_of_ennemis.push_back(enmy4);
+    Entite *enmy5 = new Contagieux;
+    pool_of_ennemis.push_back(enmy5);
+    Entite *enmy6 = new Brute;
+    pool_of_ennemis.push_back(enmy6);
+    Entite *enmy7 = new Exploseur;
+    pool_of_ennemis.push_back(enmy7);
+
+}
+
 void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards)
 {
     for (int i = 0; i < 3; i++)
@@ -269,7 +301,7 @@ void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_ca
 }
 
 void empty_card_choice(vector<Card*> &choice_of_cards){
-    for (unsigned int i = 0; i < choice_of_cards.size(); i++)
+ for (unsigned int i = 0; i < choice_of_cards.size(); i++)
     {
         choice_of_cards.erase(choice_of_cards.begin()+i);
     }

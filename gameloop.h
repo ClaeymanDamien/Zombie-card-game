@@ -23,12 +23,14 @@ void draw_with_care(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main, vect
 void deck_to_another(vector<Card*> &deck,vector<Card*> &anotherdeck);
 void delay(float time_to_wait);
 int prompt_card(int PA,vector<Card*> &main);
+void reinit_ennemy_pool(vector<Entite*> &pool_of_ennemis);
 int prompt_card_choice(int PA,vector<Card*> &main);
 void move_card(int choix_carte, vector<Card*> &deck,vector<Card*> &anotherdeck);
 void copy_card(int choix_carte, vector<Card*> &deck,vector<Card*> &anotherdeck);
 void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards);
 void choix_nouvelle_carte(vector<Card*> &choice_of_cards, vector<Card*> &deck);
 void move_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &anotherennemis);
+void copy_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &anotherennemis);
 void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse);
 void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &choice_of_ennemys);
 void empty_card_choice(vector<Card*> &choice_of_cards);
