@@ -10,14 +10,16 @@ class gameloop;
 
 class Card
 {
+    //Les fonctions amis de notre classe Card
     friend class Entite;
-    friend void afficher(std::vector<Card*> main);
+    friend void afficher(std::vector<Card*> main); //Affiche les caractéristiques d'une carte
+    //On applique l'effet d'une carte
     friend void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse);
     friend void gameloop(Entite &player,vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards);
 
 
 protected:
-
+    //Les différents attributs de la classe Card
     bool played; //Si joue true;
     std::string id;
     std::string description;
@@ -25,7 +27,8 @@ protected:
     int target_type; //0 = buff, 1 = 1 attack one entite, 2 = AOE
 
 public:
-
+    //Différentes méthodes de la classe Card
+    //Initialisation des paramètres par défaut dans le constructeur
     Card(std::string _id = "Inconnue", std::string _description = "Pas de description", int _cost = 1);
     virtual ~Card();
     int nbr_random(int min_nbr, int max_nbr) const;
@@ -41,7 +44,7 @@ public:
 
 };
 
-class Lancepierre :public Card
+class Lancepierre :public Card //La classe Lance Pierre est une des filles de la classe Card
 {
 private:
     int dommage;
@@ -66,7 +69,7 @@ class Medkit :public Card
 private:
     int life;
 public:
-    Medkit(std::string _id = "Medkit", std::string _description = "Soignez vous de 8 points de vie", int _cost = 1, int _life = 8, int _target_type = 0);
+    Medkit(std::string _id = "Medkit", std::string _description = "Soignez vous de 15 points de vie", int _cost = 1, int _life = 15, int _target_type = 0);
     virtual void effect(Entite &attacker, Entite *defender) const;
     virtual ~Medkit();
 };
