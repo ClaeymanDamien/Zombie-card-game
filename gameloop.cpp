@@ -16,12 +16,14 @@ using namespace std;
 
 // FONCTIONS
 
+// Permet de temporiser
 void delay(float time_to_wait)
 {
     clock_t endtime=clock()+(time_to_wait*CLOCKS_PER_SEC); // On calcule le moment où l'attente devra s'arrêter
     while(clock()<endtime);
 }
 
+// Effet graphique de chargement
 void loading()
 {
     cout << endl ;
@@ -34,6 +36,7 @@ void loading()
     delay(0.4);
 }
 
+// Initialisation du jeu (Selon les règles instaurées)
 void init_game(Entite &player,vector<Entite*> &ennemis, vector<Entite*> &poolennemis, vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse,vector<Card*> &poolcartes, vector<Card*> &choice_of_cards){
     // Deck de base
     for (int i = 0; i < 5; i++){
@@ -80,6 +83,7 @@ void init_game(Entite &player,vector<Entite*> &ennemis, vector<Entite*> &poolenn
 
 
 }
+
 void afficherjoueur(Entite joueur)
 {
     cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie;
@@ -102,8 +106,8 @@ void afficher_ennemis(vector<Entite*> ennemi)
         for (unsigned int i = 0; i<ennemi.size(); i++)
         {
             cout << "- " << i+1 << " | Type: "<< ennemi[i]->m_id << " HP: " << ennemi[i]->m_pointsDeVie;
-            if (ennemi[i]->m_resistance) cout << " Res: "<<ennemi[i]->m_resistance;
-            if (ennemi[i]->m_strength) cout <<" Puiss: "<< ennemi[i]->m_strength;
+            cout << " Res: "<<ennemi[i]->m_resistance;
+            cout <<" Puiss: "<< ennemi[i]->m_strength;
             if (ennemi[i]->m_empoisonnement) cout <<" Pois: " << ennemi[i]->m_empoisonnement;
             cout << endl;
         }
@@ -111,6 +115,7 @@ void afficher_ennemis(vector<Entite*> ennemi)
     cout << "___________________________________________________________" << endl;
 }
 
+// Affiche l'interface entière du jeu
 void afficherui(Entite player,vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse)
 {
     afficherjoueur(player);
@@ -151,6 +156,7 @@ void clearconsole()
     system("cls");
 }
 
+// Si le joueur perd, on arrête le programme
 void lose(Entite &player)
 {
     if (player.m_pointsDeVie <= 0)
@@ -161,6 +167,7 @@ void lose(Entite &player)
     }
 }
 
+// Pioche aléatoirement une carte
 void draw(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main)
 {
 
@@ -175,6 +182,7 @@ void draw(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main)
     }
 }
 
+// Pioche aléatoirement une carte et fait attention que le deck soit toujours rerempli par la défausse
 void draw_with_care(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main, vector <Card*> &defausse)
 {
 
@@ -196,11 +204,13 @@ void draw_with_care(int nbr_cartes,vector<Card*> &deck,vector<Card*> &main, vect
     }
 }
 
+// Vide le deck dans un autre paquet de cartes
 void deck_to_another(vector<Card*> &deck,vector<Card*> &anotherdeck)
 {
     draw(deck.size(),deck,anotherdeck);
 }
 
+// Demande une carte
 int prompt_card(int PA,vector<Card*> &main)
 {
     cout << endl << "Quelle carte allez vous jouer ? Il vous reste " << PA << " points d'action." << endl << "Votre choix: " ;
@@ -234,6 +244,7 @@ int prompt_card_choice(int PA,vector<Card*> &main)
     return 0;
 }
 
+// Demande quelle entité choisir
 int prompt_entity(vector<Entite*> &ennemis)
 {
     cout << endl << "Quelle va etre votre cible ?" << endl << "Votre choix: " ;
@@ -276,6 +287,7 @@ void copy_entity(int choix_ennemi, vector<Entite*> &ennemis,vector<Entite*> &ano
     anotherennemis.push_back(ennemis[choix_ennemi]); // Ajoute la carte du deck � la main
 }
 
+// Permet de réinitialiser le pool d'ennemis, servira plus tard éventuellement à changer le pool d'ennemis selon la difficulté
 void reinit_ennemy_pool(vector<Entite*> &pool_of_ennemis){
     size_t size_pool = pool_of_ennemis.size();
     for (unsigned int i=0; i<size_pool; i++){
@@ -299,6 +311,7 @@ void reinit_ennemy_pool(vector<Entite*> &pool_of_ennemis){
 
 }
 
+// Crée le choix de cartes en fin de combat
 void create_card_choice(vector<Card*> &pool_of_cards,vector<Card*> &choice_of_cards)
 {
     for (int i = 0; i < 3; i++)
@@ -333,6 +346,7 @@ void create_ennemy_choice(vector<Entite*> &pool_of_ennemys, vector<Entite*> &cho
     }
 }
 
+// Si une carte est jouée, on applique son effet sur les entités en combat
 void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennemis,vector<Card*> &deck,vector<Card*> &main,vector<Card*> &defausse)
 {
 
@@ -353,6 +367,7 @@ void card_played(int &PA,int choix_carte, Entite &player, vector<Entite*> &ennem
     move_card(choix_carte,main,defausse); // On trash la carte après l'avoir joué
 }
 
+// Phase d'attaque des ennemis
 void ennemys_attack (Entite &player, vector<Entite *> &ennemis)
 {
     for (unsigned int i = 0; i < ennemis.size() ; i++)
@@ -361,6 +376,7 @@ void ennemys_attack (Entite &player, vector<Entite *> &ennemis)
     }
 }
 
+// Affichage de l'empoisonnement des ennemis
 void ennemys_poisoning(vector<Entite *> &ennemis){
     for (unsigned int i = 0; i < ennemis.size() ; i++)
     {
@@ -377,6 +393,7 @@ void ennemys_poisoning(vector<Entite *> &ennemis){
     }
 }
 
+// Si l'ennemi meurt, on le supprime
 void ennemy_die (vector<Entite *> &ennemis)
 {
     for (unsigned int i=0; i < ennemis.size(); i++)
