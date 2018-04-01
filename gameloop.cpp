@@ -82,7 +82,11 @@ void init_game(Entite &player,vector<Entite*> &ennemis, vector<Entite*> &poolenn
 }
 void afficherjoueur(Entite joueur)
 {
-    cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie << " Res: " << joueur.m_resistance << " Puiss: " << joueur.m_strength << " Poison: " << joueur.m_empoisonnement << endl;
+    cout << "- Joueur" << " HP: " << joueur.m_pointsDeVie;
+    if (joueur.m_resistance) cout << " Res: " << joueur.m_resistance ;
+    if (joueur.m_strength) cout << " Puiss: " << joueur.m_strength ;
+    if (joueur.m_empoisonnement) cout << " Poison: " << joueur.m_empoisonnement;
+    cout << endl;
     cout << "___________________________________________________________" << endl;
 }
 
@@ -97,7 +101,11 @@ void afficher_ennemis(vector<Entite*> ennemi)
     {
         for (unsigned int i = 0; i<ennemi.size(); i++)
         {
-            cout << "- " << i+1 << " | Type: "<< ennemi[i]->m_id << " HP: " << ennemi[i]->m_pointsDeVie << " Res: "<<ennemi[i]->m_resistance <<" Puiss: "<< ennemi[i]->m_strength << endl;
+            cout << "- " << i+1 << " | Type: "<< ennemi[i]->m_id << " HP: " << ennemi[i]->m_pointsDeVie;
+            if (ennemi[i]->m_resistance) cout << " Res: "<<ennemi[i]->m_resistance;
+            if (ennemi[i]->m_strength) cout <<" Puiss: "<< ennemi[i]->m_strength;
+            if (ennemi[i]->m_empoisonnement) cout <<" Pois: " << ennemi[i]->m_empoisonnement;
+            cout << endl;
         }
     }
     cout << "___________________________________________________________" << endl;
