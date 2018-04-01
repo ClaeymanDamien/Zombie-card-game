@@ -10,7 +10,7 @@ class Medecin : public Entite
 {
 
 public:
-    Medecin(int _pointsDeVie=20, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Medecin");
+    Medecin(int _pointsDeVie=20, int _resistance=2, int _pointsDeDegats=0, int _strength = 0,std::string _id="Medecin");
     void injection();
     void lanceSeringue(Entite &target);
     void lanceStethoscope(Entite &target);
@@ -25,7 +25,7 @@ private:
 class Soldat : public Entite
 {
 public:
-     Soldat(int _pointsDeVie=12, int _resistance=0, int _pointsDeDegats=0, int _strength = 0,std::string _id="Soldat");
+     Soldat(int _pointsDeVie=12, int _resistance=0, int _pointsDeDegats=0, int _strength = 2,std::string _id="Soldat");
      void mortier(Entite &target); // target represente le personnage choisi
      void lanceRoquette(Entite &target);
      //void bouclier(Entite &target, int value);
